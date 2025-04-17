@@ -66,6 +66,10 @@ export default {
           "rgb(var(--dark-mode-custom-link-background-hover) / <alpha-value>)",
         darkModeCustomLinkTextHover:
           "rgb(var(--dark-mode-custom-link-text-hover) / <alpha-value>)",
+        cardFrom: "rgb(var(--light-mode-card-gradient-from) / <alpha-value>)",
+        cardTo: "rgb(var(--light-mode-card-gradient-to) / <alpha-value>)",
+        darkCardFrom: "rgb(var(--dark-mode-card-gradient-from) / <alpha-value>)",
+        darkCardTo: "rgb(var(--dark-mode-card-gradient-to) / <alpha-value>)",
       },
     },
   },

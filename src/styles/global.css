@@ -37,6 +37,10 @@
     --dark-mode-custom-link-outline-hover: 100 116 139;
     --dark-mode-custom-link-background-hover: 51 65 85;
     --dark-mode-custom-link-text-hover: 241 245 249;
+    --light-mode-card-gradient-from: 226 232 240;
+    --light-mode-card-gradient-to: 248 250 252;
+    --dark-mode-card-gradient-from: 51 65 85;
+    --dark-mode-card-gradient-to: 30 41 59;
   }
 
   body {
