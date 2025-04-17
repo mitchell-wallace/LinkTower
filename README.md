@@ -1,7 +1,8 @@
-# Treelink++
+# My Links
+
+My Links is an instance of [Treelink++](https://github.com/mitchell-wallace/treelinkplusplus).
 
 Treelink++ is a fork of [Treelink](https://github.com/trevortylerlee/treelink) that adds new features and improvements.
-
 - Improved blog preview cards
 - New default colour scheme
 - More improvements on the way including featured links
@@ -10,7 +11,8 @@ Treelink++ is a fork of [Treelink](https://github.com/trevortylerlee/treelink) t
 
 Run this in your terminal:
 ```bash
-git clone github.com/mitchell-wallace/treelinkplusplus
+git clone github.com/mitchell-wallace/my-links
+git remote add upstream https://mitchell-wallace@github.com/mitchell-wallace/treelinkplusplus
 ```
 
 Then read Treelink's [Quick start guide](https://docs.treelink.app/guides/quick-start/) to get started with customisation. Most content from Treelink's docs is still aplicable to Treelink++.
