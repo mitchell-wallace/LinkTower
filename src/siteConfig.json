@@ -1,56 +1,56 @@
 {
-  "name": "Trevor Tyler Lee",
-  "bio": "Free, open source LinkTree alternative built with Astro & Tailwind CSS",
+  "name": "John Doe",
+  "bio": "Personal website and link collection",
   "profilePicture": "/profile-picture.jpg",
-  "url": "https://trevortylerlee.com",
+  "url": "https://johndoe.example.com",
   "blog": true,
   "iconLinks": [
     {
       "id": "1728534577184",
       "icon": "link",
-      "url": "https://boogerbuttcheeks.com"
+      "url": "https://johndoe.example.com"
     },
     {
       "id": "1728534577185",
       "icon": "email",
-      "url": "mailto:ttl@trevortylerlee.com"
+      "url": "mailto:contact@johndoe.example.com"
     },
     {
       "id": "1728534577186",
       "icon": "github",
-      "url": "https://github.com/trevortylerlee"
+      "url": "https://github.com"
     },
     {
       "id": "1728534577187",
       "icon": "twitter",
-      "url": "https://twitter.com/boogerbuttcheek"
+      "url": "https://twitter.com"
+    },
+    {
+      "id": "1728534577188",
+      "icon": "youtube",
+      "url": "https://youtube.com"
     }
   ],
   "customLinks": [
     {
       "id": "1728534585738",
-      "title": "🍌 donkey kong country on the snes",
-      "url": "https://youtu.be/7hgr-ZuzXng?si=v3dr9mu2cBL_D4ED"
+      "title": "📝 My Blog",
+      "url": "https://johndoe.example.com/blog"
     },
     {
       "id": "1728534585739",
-      "title": " Best macOS apps",
-      "url": "https://macintoshapps.com"
+      "title": "💼 My Portfolio",
+      "url": "https://johndoe.example.com/portfolio"
     },
     {
       "id": "1728534585740",
-      "title": "💕 36 Questions To Fall In Love",
-      "url": "https://thirtysixquestions.org"
+      "title": "📚 Recommended Books",
+      "url": "https://johndoe.example.com/books"
     },
     {
       "id": "1728534585741",
-      "title": "SuperWeb Themes",
-      "url": "https://superwebthemes.com"
-    },
-    {
-      "id": "1728534585742",
-      "title": "♥ Donate",
-      "url": "https://donate.stripe.com/aEU6ow7VEf7u7sseUU"
+      "title": "🎥 My YouTube Channel",
+      "url": "https://youtube.com"
     }
   ]
 }

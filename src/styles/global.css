@@ -6,39 +6,94 @@
   :root {
     color-scheme: light dark;
 
-    /* replace colors from here... */
-    --light-mode-background: 240 240 240;
-    --light-mode-foreground: 0 0 0;
-    --light-mode-foreground-muted: 50 50 50;
-    --light-mode-icon-link-outline: 50 50 50;
-    --light-mode-icon-link-background: 255 255 255;
-    --light-mode-icon-link-text: 0 0 0;
-    --light-mode-icon-link-outline-hover: 0 0 0;
-    --light-mode-icon-link-background-hover: 240 240 240;
-    --light-mode-icon-link-text-hover: 0 0 0;
-    --light-mode-custom-link-outline: 50 50 50;
-    --light-mode-custom-link-background: 255 255 255;
-    --light-mode-custom-link-text: 0 0 0;
-    --light-mode-custom-link-outline-hover: 0 0 0;
-    --light-mode-custom-link-background-hover: 240 240 240;
-    --light-mode-custom-link-text-hover: 0 0 0;
+    /* Light mode */
+    /* General colours */
+    --light-mode-background-from: 245 249 253;
+    --light-mode-background-to: 230 236 244;
+    --light-mode-foreground: 30 41 59;
+    --light-mode-foreground-muted: 71 85 105;
 
-    --dark-mode-background: 10 10 10;
-    --dark-mode-foreground: 255 255 255;
-    --dark-mode-foreground-muted: 205 205 205;
-    --dark-mode-icon-link-outline: 205 205 205;
-    --dark-mode-icon-link-background: 0 0 0;
-    --dark-mode-icon-link-text: 255 255 255;
-    --dark-mode-icon-link-outline-hover: 255 255 255;
-    --dark-mode-icon-link-background-hover: 50 50 50;
-    --dark-mode-icon-link-text-hover: 255 255 255;
-    --dark-mode-custom-link-outline: 205 205 205;
-    --dark-mode-custom-link-background: 0 0 0;
-    --dark-mode-custom-link-text: 255 255 255;
-    --dark-mode-custom-link-outline-hover: 255 255 255;
-    --dark-mode-custom-link-background-hover: 50 50 50;
-    --dark-mode-custom-link-text-hover: 255 255 255;
-    /* ...to here */
+    /* Base colours */
+    --light-mode-interactive-outline: 203 213 225;
+    --light-mode-interactive-background: 255 255 255;
+    --light-mode-interactive-text: 51 65 85;
+    --light-mode-interactive-outline-hover: 148 163 184;
+    --light-mode-interactive-background-hover: 226 232 240;
+    --light-mode-interactive-text-hover: 15 23 42;
+
+    /* Icon link colours */
+    --light-mode-icon-link-outline: var(--light-mode-interactive-outline);
+    --light-mode-icon-link-background: var(--light-mode-interactive-background);
+    --light-mode-icon-link-text: var(--light-mode-interactive-text);
+    --light-mode-icon-link-outline-hover: var(--light-mode-interactive-outline-hover);
+    --light-mode-icon-link-background-hover: var(--light-mode-interactive-background-hover);
+    --light-mode-icon-link-text-hover: var(--light-mode-interactive-text-hover);
+
+    /* Custom link colours */
+    --light-mode-custom-link-outline: var(--light-mode-interactive-outline);
+    --light-mode-custom-link-background: var(--light-mode-interactive-background);
+    --light-mode-custom-link-text: var(--light-mode-interactive-text);
+    --light-mode-custom-link-outline-hover: var(--light-mode-interactive-outline-hover);
+    --light-mode-custom-link-background-hover: var(--light-mode-interactive-background-hover);
+    --light-mode-custom-link-text-hover: var(--light-mode-interactive-text-hover);
+
+    /* Post colours */
+    --light-mode-post-outline: var(--light-mode-interactive-outline);
+    --light-mode-post-background: var(--light-mode-interactive-background);
+    --light-mode-post-text: var(--light-mode-interactive-text);
+    --light-mode-post-outline-hover: var(--light-mode-interactive-outline-hover);
+    --light-mode-post-background-hover: var(--light-mode-interactive-background-hover);
+    --light-mode-post-text-hover: var(--light-mode-interactive-text-hover);
+
+    /* Post gradient colours */
+    --light-mode-post-gradient-from: var(--light-mode-interactive-background-hover);
+    --light-mode-post-gradient-to: 248 250 252;
+
+
+
+    /* Dark mode */
+    /* General colours */
+    --dark-mode-background-from: 15 23 42;
+    --dark-mode-background-to: 30 41 59;
+    --dark-mode-foreground: 241 245 249;
+    --dark-mode-foreground-muted: 203 213 225;
+
+    /* Base colours */
+    --dark-mode-interactive-outline: 71 85 105;
+    --dark-mode-interactive-background: 30 41 59;
+    --dark-mode-interactive-text: 226 232 240;
+    --dark-mode-interactive-outline-hover: 100 116 139;
+    --dark-mode-interactive-background-hover: 51 65 85;
+    --dark-mode-interactive-text-hover: 241 245 249;
+
+    /* Icon link colours */
+    --dark-mode-icon-link-outline: var(--dark-mode-interactive-outline);
+    --dark-mode-icon-link-background: var(--dark-mode-interactive-background);
+    --dark-mode-icon-link-text: var(--dark-mode-interactive-text);
+    --dark-mode-icon-link-outline-hover: var(--dark-mode-interactive-outline-hover);
+    --dark-mode-icon-link-background-hover: var(--dark-mode-interactive-background-hover);
+    --dark-mode-icon-link-text-hover: var(--dark-mode-interactive-text-hover);
+
+    /* Custom link colours */
+    --dark-mode-custom-link-outline: var(--dark-mode-interactive-outline);
+    --dark-mode-custom-link-background: var(--dark-mode-interactive-background);
+    --dark-mode-custom-link-text: var(--dark-mode-interactive-text);
+    --dark-mode-custom-link-outline-hover: var(--dark-mode-interactive-outline-hover);
+    --dark-mode-custom-link-background-hover: var(--dark-mode-interactive-background-hover);
+    --dark-mode-custom-link-text-hover: var(--dark-mode-interactive-text-hover);
+
+    /* Post colours */
+    --dark-mode-post-outline: var(--dark-mode-interactive-outline);
+    --dark-mode-post-background: var(--dark-mode-interactive-background);
+    --dark-mode-post-text: var(--dark-mode-interactive-text);
+    --dark-mode-post-outline-hover: var(--dark-mode-interactive-outline-hover);
+    --dark-mode-post-background-hover: var(--dark-mode-interactive-background-hover);
+    --dark-mode-post-text-hover: var(--dark-mode-interactive-text-hover);
+
+    /* Post gradient colours */
+    --dark-mode-post-gradient-from: var(--dark-mode-interactive-background-hover);
+    --dark-mode-post-gradient-to: 30 41 59;
+
   }
 
   body {

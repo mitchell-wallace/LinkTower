@@ -8,8 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        lightModeBackground:
-          "rgb(var(--light-mode-background) / <alpha-value>)",
+        // Light mode
+        lightModeBackgroundFrom:
+          "rgb(var(--light-mode-background-from) / <alpha-value>)",
+        lightModeBackgroundTo:
+          "rgb(var(--light-mode-background-to) / <alpha-value>)",
         lightModeForeground:
           "rgb(var(--light-mode-foreground) / <alpha-value>)",
         lightModeForegroundMuted:
@@ -38,7 +41,25 @@ export default {
           "rgb(var(--light-mode-custom-link-background-hover) / <alpha-value>)",
         lightModeCustomLinkTextHover:
           "rgb(var(--light-mode-custom-link-text-hover) / <alpha-value>)",
-        darkModeBackground: "rgb(var(--dark-mode-background) / <alpha-value>)",
+        lightModePostOutline: 
+          "rgb(var(--light-mode-post-outline) / <alpha-value>)",
+        lightModePostBackground: 
+          "rgb(var(--light-mode-post-background) / <alpha-value>)",
+        lightModePostText: 
+          "rgb(var(--light-mode-post-text) / <alpha-value>)",
+        lightModePostOutlineHover: 
+          "rgb(var(--light-mode-post-outline-hover) / <alpha-value>)",
+        lightModePostBackgroundHover: 
+          "rgb(var(--light-mode-post-background-hover) / <alpha-value>)",
+        lightModePostTextHover: 
+          "rgb(var(--light-mode-post-text-hover) / <alpha-value>)",
+        lightModePostFrom: 
+          "rgb(var(--light-mode-post-gradient-from) / <alpha-value>)",
+        lightModePostTo: 
+          "rgb(var(--light-mode-post-gradient-to) / <alpha-value>)",
+
+        darkModeBackgroundFrom: "rgb(var(--dark-mode-background-from) / <alpha-value>)",
+        darkModeBackgroundTo: "rgb(var(--dark-mode-background-to) / <alpha-value>)",
         darkModeForeground: "rgb(var(--dark-mode-foreground) / <alpha-value>)",
         darkModeForegroundMuted:
           "rgb(var(--dark-mode-foreground-muted) / <alpha-value>)",
@@ -66,6 +87,22 @@ export default {
           "rgb(var(--dark-mode-custom-link-background-hover) / <alpha-value>)",
         darkModeCustomLinkTextHover:
           "rgb(var(--dark-mode-custom-link-text-hover) / <alpha-value>)",
+        darkModePostOutline: 
+          "rgb(var(--dark-mode-post-outline) / <alpha-value>)",
+        darkModePostBackground: 
+          "rgb(var(--dark-mode-post-background) / <alpha-value>)",
+        darkModePostText: 
+          "rgb(var(--dark-mode-post-text) / <alpha-value>)",
+        darkModePostOutlineHover: 
+          "rgb(var(--dark-mode-post-outline-hover) / <alpha-value>)",
+        darkModePostBackgroundHover: 
+          "rgb(var(--dark-mode-post-background-hover) / <alpha-value>)",
+        darkModePostTextHover: 
+          "rgb(var(--dark-mode-post-text-hover) / <alpha-value>)",
+        darkModePostFrom: 
+          "rgb(var(--dark-mode-post-gradient-from) / <alpha-value>)",
+        darkModePostTo: 
+          "rgb(var(--dark-mode-post-gradient-to) / <alpha-value>)",
       },
     },
   },

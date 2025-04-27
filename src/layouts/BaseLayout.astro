@@ -9,7 +9,7 @@ import Footer from "@/components/Footer.astro";
   <BaseHead>
     <slot name="head" />
   </BaseHead>
-  <body class="mx-auto min-h-screen max-w-screen-sm p-3 font-sans sm:p-6">
+  <body class="mx-auto min-h-screen max-w-screen-sm p-3 font-sans sm:p-6 bg-gradient-to-b from-lightModeBackgroundFrom to-lightModeBackgroundTo dark:from-darkModeBackgroundFrom dark:to-darkModeBackgroundTo bg-fixed">
     <main>
       <slot />
     </main>
