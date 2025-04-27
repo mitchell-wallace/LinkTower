@@ -1,56 +1,46 @@
 {
-  "name": "John Doe",
-  "bio": "Personal website and link collection",
+  "name": "Mitchell Wallace",
+  "bio": "Songwriter • Preacher • Dreamer",
   "profilePicture": "/profile-picture.jpg",
-  "url": "https://johndoe.example.com",
+  "url": "https://mitchellwallace.net",
   "blog": true,
   "iconLinks": [
     {
       "id": "1728534577184",
-      "icon": "link",
-      "url": "https://johndoe.example.com"
-    },
-    {
-      "id": "1728534577185",
-      "icon": "email",
-      "url": "mailto:contact@johndoe.example.com"
+      "icon": "youtube",
+      "url": "https://www.youtube.com/@mitchellwallace"
     },
     {
       "id": "1728534577186",
-      "icon": "github",
-      "url": "https://github.com"
+      "icon": "instagram",
+      "url": "https://www.instagram.com/mitch_tmv/"
     },
     {
       "id": "1728534577187",
-      "icon": "twitter",
-      "url": "https://twitter.com"
+      "icon": "tiktok",
+      "url": "https://www.tiktok.com/@mitch_tmv"
     },
     {
       "id": "1728534577188",
-      "icon": "youtube",
-      "url": "https://youtube.com"
+      "icon": "facebook",
+      "url": "https://www.facebook.com/mitchsvids"
     }
   ],
   "customLinks": [
     {
-      "id": "1728534585738",
-      "title": "📝 My Blog",
-      "url": "https://johndoe.example.com/blog"
+      "id": "1728534585739",
+      "title": "📙 Shareable Bible verses app",
+      "url": "https://quotd.vercel.app/"
     },
     {
-      "id": "1728534585739",
-      "title": "💼 My Portfolio",
-      "url": "https://johndoe.example.com/portfolio"
+      "id": "1728534585738",
+      "title": "👨‍💻 Developer portfolio",
+      "url": "https://mitchellwallace.dev"
     },
     {
       "id": "1728534585740",
-      "title": "📚 Recommended Books",
-      "url": "https://johndoe.example.com/books"
-    },
-    {
-      "id": "1728534585741",
-      "title": "🎥 My YouTube Channel",
-      "url": "https://youtube.com"
+      "title": "🎨 Web design studio",
+      "url": "https://ephodstudio.com/"
     }
   ]
 }
