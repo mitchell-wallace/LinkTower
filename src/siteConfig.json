@@ -6,14 +6,9 @@
   "blog": true,
   "iconLinks": [
     {
-      "id": "1728534577184",
-      "icon": "link",
-      "url": "https://johndoe.example.com"
-    },
-    {
-      "id": "1728534577185",
-      "icon": "email",
-      "url": "mailto:contact@johndoe.example.com"
+      "id": "1728534577188",
+      "icon": "logos:youtube-icon",
+      "url": "https://youtube.com"
     },
     {
       "id": "1728534577186",
@@ -22,35 +17,44 @@
     },
     {
       "id": "1728534577187",
-      "icon": "twitter",
-      "url": "https://twitter.com"
+      "icon": "logos:x",
+      "url": "https://x.com"
     },
     {
-      "id": "1728534577188",
-      "icon": "youtube",
-      "url": "https://youtube.com"
+      "id": "1728534577185",
+      "icon": "email",
+      "url": "mailto:contact@johndoe.example.com"
+    },
+    {
+      "id": "1728534577184",
+      "icon": "link",
+      "url": "https://johndoe.example.com"
     }
   ],
   "customLinks": [
     {
       "id": "1728534585738",
-      "title": "📝 My Blog",
+      "title": "My Blog",
+      "icon": "material-symbols:stylus-note-outline-rounded",
       "description": "I write about tech and programming mostly",
       "url": "https://johndoe.example.com/blog"
     },
     {
       "id": "1728534585739",
-      "title": "💼 My Portfolio",
+      "title": "My Portfolio",
+      "icon": "fluent-emoji-high-contrast:briefcase",
       "url": "https://johndoe.example.com/portfolio"
     },
     {
       "id": "1728534585740",
-      "title": "📚 Recommended Books",
+      "title": "Recommended Books",
+      "icon": "fluent-emoji-high-contrast:books",
       "url": "https://johndoe.example.com/books"
     },
     {
       "id": "1728534585741",
-      "title": "🎥 My YouTube Channel",
+      "title": "My YouTube Channel",
+      "icon": "youtube",
       "url": "https://youtube.com"
     }
   ]

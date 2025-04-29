@@ -38,3 +38,47 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [Astro's documentation](https://github.com/withastro/astro) or jump into Astro's [Discord server](https://astro.build/chat).
+
+## 🎨 Custom Icons
+
+TreeLink++ uses [astro-icon](https://www.npmjs.com/package/astro-icon) for icons, which integrates with the [Iconify](https://icon-sets.iconify.design/) collection. By default, we only load specific icons to prevent memory issues during development.
+
+### Adding New Icons
+
+1. **First, install the icon collection**
+
+   For example, to add icons from the Tabler collection:
+
+   ```bash
+   pnpm add -D @iconify-json/tabler
+   ```
+
+2. **Update the `astro.config.mjs` file to include only the specific icons you need**
+
+   ```javascript
+   // astro.config.mjs
+   icon({
+     include: {
+       // Existing icons
+       lucide: ['chevron-right', 'link'],
+       // Add the new icons you want
+       tabler: ['brand-github', 'brand-twitter'],
+     }
+   })
+   ```
+
+3. **Use the icons in your files**
+
+   ```astro
+   ---
+   import { Icon } from "astro-icon/components";
+   ---
+   <Icon name="tabler:brand-github" class="size-6" />
+   ```
+
+### Custom SVG Icons
+
+You can also add custom SVG icons to the `src/icons` folder and use them by their filename:
+
+```astro
+<Icon name="my-custom-icon" />

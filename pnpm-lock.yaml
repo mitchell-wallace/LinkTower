@@ -36,6 +36,24 @@ importers:
         specifier: ^5.6.3
         version: 5.8.2
     devDependencies:
+      '@iconify-json/fluent-emoji-flat':
+        specifier: ^1.2.3
+        version: 1.2.3
+      '@iconify-json/fluent-emoji-high-contrast':
+        specifier: ^1.2.3
+        version: 1.2.3
+      '@iconify-json/logos':
+        specifier: ^1.2.4
+        version: 1.2.4
+      '@iconify-json/lucide':
+        specifier: ^1.2.39
+        version: 1.2.39
+      '@iconify-json/material-symbols':
+        specifier: ^1.2.20
+        version: 1.2.20
+      '@iconify-json/material-symbols-light':
+        specifier: ^1.2.20
+        version: 1.2.20
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.16(tailwindcss@3.4.17)
@@ -359,6 +377,24 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@iconify-json/fluent-emoji-flat@1.2.3':
+    resolution: {integrity: sha512-dPvAidr4bQv8Esr77qNyD8V8yhtIDUirAQP6eHGeoqxpYVZTnGQ556NlBs4553cV4fjnK81t6eSBmPGPk+yUeA==}
+
+  '@iconify-json/fluent-emoji-high-contrast@1.2.3':
+    resolution: {integrity: sha512-quHd+KLY3I1gZHiQj2qH2djt8RQaj+DrBpNdJ/b7Cweiu6m3/h/ZR/KMXSGNGmPKMgPlGgH2MlIpO8CgZdsBAg==}
+
+  '@iconify-json/logos@1.2.4':
+    resolution: {integrity: sha512-XC4If5D/hbaZvUkTV8iaZuGlQCyG6CNOlaAaJaGa13V5QMYwYjgtKk3vPP8wz3wtTVNVEVk3LRx1fOJz+YnSMw==}
+
+  '@iconify-json/lucide@1.2.39':
+    resolution: {integrity: sha512-1BKCamEZRvArR7PErYCP4SZo9pAANJy6iQWpynI3GM8QKSQtWQgvw6usqGIFCQeJwFZHPOn2OcbDR4P56DyEaQ==}
+
+  '@iconify-json/material-symbols-light@1.2.20':
+    resolution: {integrity: sha512-xGPhQR80cNLAXRKAlbHQJednqaimVBqQGTz3WZUlStzIaUhrbVpFscyQT/taAe0X9+Ra6XlhsIN+MPG8HDJCeA==}
+
+  '@iconify-json/material-symbols@1.2.20':
+    resolution: {integrity: sha512-+KqOT+3fD+LC2FbWiV8gd4+JLMiVUtmqrjzpKN1ji7rfMQTwvYJ94RT0WQlmL+vfDNJ5MTRe3rBzzJyvIH/aSg==}
 
   '@iconify/tools@4.1.2':
     resolution: {integrity: sha512-q6NzLQYEN9zkDfcyBqD3vItHcZw97w/s++3H3TBxUORr57EfHxj6tOW6fyufDjMq+Vl56WXWaPx1csBPYlI5CA==}
@@ -2925,6 +2961,30 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@iconify-json/fluent-emoji-flat@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/fluent-emoji-high-contrast@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/logos@1.2.4':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/lucide@1.2.39':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/material-symbols-light@1.2.20':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/material-symbols@1.2.20':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/tools@4.1.2':
     dependencies:

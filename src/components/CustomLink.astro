@@ -56,7 +56,9 @@ const iconClasses = [
         class={iconClasses}
       />
       <div class="flex-1 text-center">
-        {link.title}
+        <p class="font-semibold">
+          {link.title}
+        </p>
         {link.description ? (
           <p class="text-sm text-lightModeForegroundMuted dark:text-darkModeForegroundMuted">
             {link.description}
@@ -64,7 +66,7 @@ const iconClasses = [
         ) : null}
       </div>
       <Icon
-        name={link.icon ?? "link"}
+        name={"lucide:chevron-right"}
         class={iconClasses}
       />
     </div>
