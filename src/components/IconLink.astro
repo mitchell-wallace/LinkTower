@@ -2,17 +2,56 @@
 import { Icon } from "astro-icon/components";
 
 const { icon, url } = Astro.props;
+
+const linkClasses = [
+  // Base
+  "group block rounded-full",
+  "p-3 ring-2 transition-colors",
+  
+  // Light mode
+  "bg-lightModeIconLinkBackground",
+  "ring-lightModeIconLinkOutline",
+  
+  // Hover
+  "hover:bg-lightModeIconLinkBackgroundHover",
+  "hover:ring-lightModeIconLinkOutlineHover",
+  
+  // Dark mode
+  "dark:bg-darkModeIconLinkBackground",
+  "dark:ring-darkModeIconLinkOutline",
+  
+  // Dark Hover
+  "dark:hover:bg-darkModeIconLinkBackgroundHover",
+  "dark:hover:ring-darkModeIconLinkOutlineHover"
+].join(" ");
+
+const iconClasses = [
+  // Base
+  "size-6 transition-colors",
+  
+  // Light mode
+  "text-lightModeIconLinkText",
+  
+  // Hover
+  "group-hover:text-lightModeIconLinkTextHover",
+  
+  // Dark mode
+  "dark:text-darkModeIconLinkText",
+  
+  // Dark Hover
+  "group-hover:dark:text-darkModeIconLinkTextHover"
+].join(" ");
 ---
 
 <li>
   <a
     href={url}
     aria-label={icon}
-    class="bg-lightModeIconLinkBackground dark:bg-darkModeIconLinkBackground hover:bg-lightModeIconLinkBackgroundHover dark:hover:bg-darkModeIconLinkBackgroundHover hover:ring-lightModeIconLinkOutlineHover dark:hover:ring-darkModeIconLinkOutlineHover group block rounded-full p-3 ring-2 ring-lightModeIconLinkOutline transition-colors dark:ring-darkModeIconLinkOutline"
+    class={linkClasses}
   >
     <Icon
       name={icon}
-      class="text-lightModeIconLinkText group-hover:text-lightModeIconLinkTextHover group-hover:dark:text-darkModeIconLinkTextHover dark:text-darkModeIconLinkText size-6 transition-colors"
+      class={iconClasses}
     />
   </a>
 </li>

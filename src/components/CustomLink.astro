@@ -1,11 +1,36 @@
 ---
 const { text, icon, url } = Astro.props;
+
+const linkClasses = [
+  // Base
+  "flex items-center justify-center gap-2 rounded-full px-6 py-3 text-lg transition-colors",
+
+  // Light mode
+  "bg-lightModeCustomLinkBackground",
+  "text-lightModeCustomLinkText",
+  "ring-2 ring-lightModeCustomLinkOutline",
+
+  // Hover
+  "hover:bg-lightModeCustomLinkBackgroundHover",
+  "hover:text-lightModeCustomLinkTextHover",
+  "hover:ring-lightModeCustomLinkOutlineHover",
+
+  // Dark mode
+  "dark:bg-darkModeCustomLinkBackground",
+  "dark:text-darkModeCustomLinkText",
+  "dark:ring-darkModeCustomLinkOutline",
+
+  // Dark Hover
+  "dark:hover:bg-darkModeCustomLinkBackgroundHover",
+  "dark:hover:text-darkModeCustomLinkTextHover",
+  "dark:hover:ring-darkModeCustomLinkOutlineHover"
+].join(" ");
 ---
 
 <li>
   <a
     href={url}
-    class="hover:bg-lightModeCustomLinkBackgroundHover dark:hover:bg-darkModeCustomLinkBackgroundHover hover:ring-lightModeCustomLinkOutlineHover dark:hover:ring-darkModeCustomLinkOutlineHover hover:text-lightModeCustomLinkTextHover dark:hover:text-darkModeCustomLinkTextHover flex items-center justify-center gap-2 rounded-full bg-lightModeCustomLinkBackground px-6 py-3 text-lg text-lightModeCustomLinkText ring-2 ring-lightModeCustomLinkOutline transition-colors dark:bg-darkModeCustomLinkBackground dark:text-darkModeCustomLinkText dark:ring-darkModeCustomLinkOutline"
+    class={linkClasses}
   >
     <slot />
   </a>

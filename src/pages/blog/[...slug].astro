@@ -24,6 +24,46 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const navLinkClasses = [
+  // Base
+  "block py-3 text-lg font-medium uppercase",
+  "underline underline-offset-4",
+  
+  // Light mode
+  "text-lightModeForegroundMuted",
+  
+  // Hover
+  "hover:text-lightModeForeground",
+  
+  // Dark mode
+  "dark:text-darkModeForegroundMuted",
+  
+  // Dark Hover
+  "dark:hover:text-darkModeForeground"
+].join(" ");
+
+const titleClasses = [
+  // Base
+  "mt-6 flex flex-wrap justify-center text-balance text-2xl font-medium",
+  
+  // Light mode
+  "text-lightModeForeground",
+  
+  // Dark mode
+  "dark:text-darkModeForeground"
+].join(" ");
+
+const publishDateClasses = [
+  // Base
+  "text-center text-sm",
+  
+  // Light mode
+  "text-lightModeForegroundMuted",
+  
+  // Dark mode
+  "dark:text-darkModeForegroundMuted"
+].join(" ");
 ---
 
 <BaseLayout>
@@ -31,7 +71,7 @@ const { Content } = await entry.render();
   <main>
     <a
       href="/"
-      class="block py-3 text-lg font-medium uppercase text-lightModeForegroundMuted underline underline-offset-4 hover:text-lightModeForeground dark:text-darkModeForegroundMuted dark:hover:text-darkModeForeground"
+      class={navLinkClasses}
       >{`← ${SITE.name}`}</a
     >
     {
@@ -44,12 +84,12 @@ const { Content } = await entry.render();
       )
     }
     <h1
-      class="mt-6 flex flex-wrap justify-center text-balance text-2xl font-medium text-lightModeForeground dark:text-darkModeForeground"
+      class={titleClasses}
     >
       {entry.data.title}
     </h1>
     <p
-      class="text-center text-sm text-lightModeForegroundMuted dark:text-darkModeForegroundMuted"
+      class={publishDateClasses}
     >
       Published {formatDate(entry.data.publicationDate)}
     </p>
@@ -59,7 +99,7 @@ const { Content } = await entry.render();
     </div>
     <a
       href="/"
-      class="block py-3 text-lg font-medium uppercase text-lightModeForegroundMuted underline underline-offset-4 hover:text-lightModeForeground dark:text-darkModeForegroundMuted dark:hover:text-darkModeForeground"
+      class={navLinkClasses}
       >{`← ${SITE.name}`}</a
     >
   </main>

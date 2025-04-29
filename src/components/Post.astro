@@ -2,19 +2,93 @@
 import { formatDate } from "@/lib/util";
 
 const { post } = Astro.props;
+
+const postItemClasses = [
+  // Base
+  "overflow-hidden rounded-lg shadow-md transition-colors",
+  
+  // Light mode
+  "bg-lightModePostBackground",
+  "ring-2 ring-lightModePostOutline",
+  
+  // Hover
+  "hover:bg-lightModePostBackgroundHover",
+  "hover:ring-lightModePostOutlineHover",
+  
+  // Dark mode
+  "dark:bg-darkModePostBackground",
+  "dark:ring-darkModePostOutline",
+  
+  // Dark Hover
+  "dark:hover:bg-darkModePostBackgroundHover",
+  "dark:hover:ring-darkModePostOutlineHover"
+].join(" ");
+
+const gradientClasses = [
+  // Base
+  "w-full h-48 bg-gradient-to-br",
+  
+  // Light mode
+  "from-lightModePostFrom to-lightModePostTo",
+  
+  // Dark mode
+  "dark:from-darkModePostFrom dark:to-darkModePostTo"
+].join(" ");
+
+const titleClasses = [
+  // Base
+  "text-xl font-semibold",
+  
+  // Light mode
+  "text-lightModeForeground",
+  
+  // Dark mode
+  "dark:text-darkModeForeground"
+].join(" ");
+
+const descriptionClasses = [
+  // Base
+  "mt-2",
+  
+  // Light mode
+  "text-lightModeForegroundMuted",
+  
+  // Dark mode
+  "dark:text-darkModeForegroundMuted"
+].join(" ");
+
+const timeClasses = [
+  // Base
+  "mt-4 block text-sm",
+  
+  // Light mode
+  "text-lightModeForegroundMuted",
+  
+  // Dark mode
+  "dark:text-darkModeForegroundMuted"
+].join(" ");
 ---
 
-<li class="overflow-hidden rounded-lg shadow-md bg-lightModePostBackground dark:bg-darkModePostBackground hover:bg-lightModePostBackgroundHover dark:hover:bg-darkModePostBackgroundHover ring-2 ring-lightModePostOutline dark:ring-darkModePostOutline hover:ring-lightModePostOutlineHover dark:hover:ring-darkModePostOutlineHover transition-colors">
+<li class={postItemClasses}>
   <a href={`/blog/${post.slug}`} class="block">
     {post.data.image ? (
       <img src={post.data.image.src} alt={post.data.imageAlt ?? post.data.title} class="w-full h-48 object-cover" />
     ) : (
-      <div class="w-full h-48 bg-gradient-to-br from-lightModePostFrom to-lightModePostTo dark:from-darkModePostFrom dark:to-darkModePostTo"></div>
+      <div class={gradientClasses}></div>
     )}
     <div class="p-4">
-      <h2 class="text-xl font-semibold text-lightModeForeground dark:text-darkModeForeground">{post.data.title}</h2>
-      <p class="mt-2 text-lightModeForegroundMuted dark:text-darkModeForegroundMuted">{post.data.description}</p>
-      <time class="mt-4 block text-sm text-lightModeForegroundMuted dark:text-darkModeForegroundMuted">{formatDate(post.data.publicationDate)}</time>
+      <h2 class={titleClasses}
+      >
+        {post.data.title}
+      </h2>
+      <p class={descriptionClasses}
+      >
+        {post.data.description}
+      </p>
+      <time class={timeClasses}
+      >
+        {formatDate(post.data.publicationDate)}
+      </time>
     </div>
   </a>
 </li>

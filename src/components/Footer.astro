@@ -1,8 +1,25 @@
-<footer
-  class="pt-12 text-center text-xs text-lightModeForegroundMuted hover:text-lightModeForeground dark:text-darkModeForegroundMuted dark:hover:text-darkModeForeground"
->
+---
+const footerClasses = [
+  // Base
+  "pt-12 text-center text-xs",
+  
+  // Light mode
+  "text-lightModeForegroundMuted",
+  
+  // Hover
+  "hover:text-lightModeForeground",
+  
+  // Dark mode
+  "dark:text-darkModeForegroundMuted",
+  
+  // Dark Hover
+  "dark:hover:text-darkModeForeground"
+].join(" ");
+---
+
+<footer class={footerClasses}>
   <hr class="opacity-50" />
-  <a href="https://github.com/mitchell-wallace/treelinkplusplus" class="block py-4 no-underline"
-    >Built with Treelink++ 🔗</a
-  >
+  <a href="https://github.com/mitchell-wallace/treelinkplusplus" class="block py-4 no-underline">
+    Built with Treelink++ 🔗
+  </a>
 </footer>
