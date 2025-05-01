@@ -47,44 +47,71 @@ Feel free to check [Astro's documentation](https://github.com/withastro/astro) o
 
 ## 🎨 Custom Icons
 
-TreeLink++ uses [astro-icon](https://www.npmjs.com/package/astro-icon) for icons, which integrates with the [Iconify](https://icon-sets.iconify.design/) collection. By default, we only load specific icons to prevent memory issues during development.
+TreeLink++ uses [astro-icon](https://www.npmjs.com/package/astro-icon) for icons, integrating with the [Iconify](https://icon-sets.iconify.design/) collection and supporting local SVGs.
 
-### Adding New Icons
+### 🚀 Default Icons from Lucide
 
-1. **First, install the icon collection**
+A broad set of Lucide icons is always available, covering common social, contact, and utility icons for link-in-bio pages. Examples include:
 
-   For example, to add icons from the Tabler collection:
+`chevron-right`, `chevron-left`, `link`, `external-link`, `mail`, `phone`, `globe`, `user`, `users`, `calendar`, `star`, `heart`, `bookmark`, `map-pin`, `github`, `twitter`, `facebook`, `instagram`, `linkedin`, `youtube`, `twitch`, `discord`, `reddit`, `x`, `dribbble`, `slack`, `whatsapp`, `telegram`, `snapchat`, `pinterest`, `tumblr`, `medium`, `gitlab`, `bitbucket`, `stack-overflow`, `figma`, `cloud`, `settings`, `home`, `award`, `gift`, and many more.
 
-   ```bash
-   pnpm add -D @iconify-json/tabler
-   ```
+Use any Lucide icon by referencing its name (no prefix) in your config:
 
-2. **Update the `astro.config.mjs` file to include only the specific icons you need**
+```json
+{
+  // ...
+  "icon": "github"
+  // ...
+}
+```
 
-   ```javascript
-   // astro.config.mjs
-   icon({
-     include: {
-       // Existing icons
-       lucide: ['chevron-right', 'link'],
-       // Add the new icons you want
-       tabler: ['brand-github', 'brand-twitter'],
-     }
-   })
-   ```
+### ℹ️ Adding Additional Icons from Iconify
 
-3. **Use the icons in your files**
+You can install additional icons from [Iconify](https://icon-sets.iconify.design/) by running `pnpm install @iconify-json/[icon-set-name]`. For example, to install the Fluent Emoji icons, run `pnpm install @iconify-json/fluent-emoji-flat`.
 
-   ```astro
-   ---
-   import { Icon } from "astro-icon/components";
-   ---
-   <Icon name="tabler:brand-github" class="size-6" />
-   ```
+To use them in your config, use the icon set name and icon name, like `fluent-emoji-flat:smile`.
 
-### Custom SVG Icons
+Whenever you add new icons to `src/siteConfig.json`, restart the Astro dev server for icon to be available.
 
-You can also add custom SVG icons to the `src/icons` folder and use them by their filename:
+For example, if you want to use the A|B icon from Tabler icons, you would need to do the following:
 
-```astro
-<Icon name="my-custom-icon" />
+```bash
+pnpm install @iconify-json/tabler
+```
+
+Then use it like this:
+
+```json
+{
+  // ...
+  "icon": "tabler:ab"
+  // ...
+}
+```
+
+### 🖼️ Local SVG Icons (`local:`)
+
+You can use any SVGs as icons for your site. To do so, simply place custom SVGs in `src/icons/`. SVGs in this folder are available as icons using the `local:` prefix and the filename (without `.svg`).
+
+For example, if you have `src/icons/mylogo.svg`, use it like this:
+
+```json
+{
+  // ...
+  "icon": "local:mylogo"
+  // ...
+}
+```
+
+These icons will be automatically detected by the code and available when you restart the Astro dev server.
+
+### 📝 Example: Using icons from different sources together
+
+```json
+{
+  "iconLinks": [
+    { "icon": "github", "url": "https://github.com" },
+    { "icon": "local:mylogo", "url": "https://my.site" }
+  ]
+}
+```
