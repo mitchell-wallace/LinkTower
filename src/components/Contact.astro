@@ -1,5 +1,58 @@
 ---
+// Button styles
+const buttonClasses = [
+  // Base
+  "flex items-center justify-center gap-2 rounded-full px-6 py-3 text-lg transition-colors w-full",
 
+  // Light mode
+  "bg-lightModeCustomLinkBackground",
+  "text-lightModeCustomLinkText",
+  "ring-2 ring-lightModeCustomLinkOutline",
+
+  // Hover
+  "hover:bg-lightModeCustomLinkBackgroundHover",
+  "hover:text-lightModeCustomLinkTextHover",
+  "hover:ring-lightModeCustomLinkOutlineHover",
+
+  // Dark mode
+  "dark:bg-darkModeCustomLinkBackground",
+  "dark:text-darkModeCustomLinkText",
+  "dark:ring-darkModeCustomLinkOutline",
+
+  // Dark Hover
+  "dark:hover:bg-darkModeCustomLinkBackgroundHover",
+  "dark:hover:text-darkModeCustomLinkTextHover",
+  "dark:hover:ring-darkModeCustomLinkOutlineHover"
+].join(" ");
+
+// Input field styles
+const inputClasses = [
+  // Base
+  "w-full px-4 py-3 rounded-lg outline-none focus:ring-4 transition-colors",
+  
+  // Light mode
+  "bg-lightModeCustomLinkBackground",
+  "text-lightModeForeground",
+  "border border-lightModeCustomLinkOutline",
+  "placeholder:text-lightModeForegroundMuted",
+  
+  // Focus
+  "focus:border-lightModeCustomLinkOutlineHover",
+  "focus:ring-lightModeCustomLinkOutlineHover/20",
+  
+  // Dark mode
+  "dark:bg-darkModeCustomLinkBackground",
+  "dark:text-darkModeForeground",
+  "dark:border-darkModeCustomLinkOutline",
+  "dark:placeholder:text-darkModeForegroundMuted",
+  
+  // Dark Focus
+  "dark:focus:border-darkModeCustomLinkOutlineHover",
+  "dark:focus:ring-darkModeCustomLinkOutlineHover/20"
+].join(" ");
+
+// Error message styles
+const errorClasses = "text-red-400 text-sm mt-1";
 ---
 
 <h2 class="pt-12 pb-8 text-3xl font-semibold text-center">Contact</h2>
@@ -21,10 +74,10 @@
       type="text"
       placeholder="Full Name"
       required
-      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-lg outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      class={inputClasses}
       name="name"
     />
-    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+    <div class={`empty-feedback invalid-feedback ${errorClasses}`}>
       Please provide your full name.
     </div>
   </div>
@@ -35,12 +88,12 @@
       placeholder="Email Address"
       name="email"
       required
-      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-lg outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      class={inputClasses}
     />
-    <div class="empty-feedback text-red-400 text-sm mt-1">
+    <div class={`empty-feedback ${errorClasses}`}>
       Please provide your email address.
     </div>
-    <div class="invalid-feedback text-red-400 text-sm mt-1">
+    <div class={`invalid-feedback ${errorClasses}`}>
       Please provide a valid email address.
     </div>
   </div>
@@ -49,15 +102,15 @@
       name="message"
       required
       placeholder="Your Message"
-      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-lg outline-none h-36 focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      class={`${inputClasses} h-36`}
     ></textarea>
-    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+    <div class={`empty-feedback invalid-feedback ${errorClasses}`}>
       Please enter your message.
     </div>
   </div>
   <button 
     type="submit"
-    class="hover:bg-lightModeCustomLinkBackgroundHover dark:hover:bg-darkModeCustomLinkBackgroundHover hover:ring-lightModeCustomLinkOutlineHover dark:hover:ring-darkModeCustomLinkOutlineHover hover:text-lightModeCustomLinkTextHover dark:hover:text-darkModeCustomLinkTextHover flex items-center justify-center gap-2 rounded-full bg-lightModeCustomLinkBackground px-6 py-3 text-lg text-lightModeCustomLinkText ring-2 ring-lightModeCustomLinkOutline transition-colors dark:bg-darkModeCustomLinkBackground dark:text-darkModeCustomLinkText dark:ring-darkModeCustomLinkOutline w-full"
+    class={buttonClasses}
   >
     Send Message
   </button>
