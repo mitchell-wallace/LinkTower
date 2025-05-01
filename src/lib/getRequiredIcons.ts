@@ -5,20 +5,7 @@ import { fileURLToPath } from 'url';
 // Always include these Lucide icons
 const DEFAULT_LUCIDE_ICONS = [
   // Icons used as part of site
-  'chevron-right', 'chevron-left', 'link', 'external-link', 
-  
-  // Icons available for site config
-  'mail', 'phone', 'globe', 'user', 'users', 'calendar', 'star', 'heart', 'bookmark',
-  'map-pin', 'location', 'rss', 'shopping-cart', 'credit-card', 'zap', 'music', 'video', 'camera', 'image', 'message-circle', 'message-square',
-  'github', 'twitter', 'facebook', 'instagram', 'linkedin', 'youtube', 'twitch', 'discord', 'reddit', 'x', 'dribbble', 'slack', 'whatsapp',
-  'telegram', 'snapchat', 'pinterest', 'tumblr', 'medium', 'gitlab', 'bitbucket', 'stack-overflow', 'codepen', 'codesandbox', 'figma', 'behance',
-  'apple', 'android', 'windows', 'chrome', 'firefox', 'safari', 'opera', 'cloud', 'cloud-upload', 'cloud-download', 'download', 'upload',
-  'play', 'pause', 'stop', 'skip-forward', 'skip-back', 'repeat', 'shuffle', 'volume', 'volume-2', 'volume-x', 'mic', 'headphones',
-  'wallet', 'dollar-sign', 'bitcoin', 'activity', 'award', 'bar-chart', 'trending-up', 'trending-down', 'flag', 'shield', 'lock', 'unlock',
-  'settings', 'sliders', 'tool', 'edit', 'edit-2', 'edit-3', 'trash', 'archive', 'file', 'file-text', 'folder', 'folder-open', 'clipboard',
-  'sun', 'moon', 'star', 'bell', 'bell-off', 'eye', 'eye-off', 'alert-circle', 'info', 'help-circle', 'question', 'check', 'x', 'plus', 'minus',
-  'arrow-up', 'arrow-down', 'arrow-left', 'arrow-right', 'log-in', 'log-out', 'share', 'share-2', 'bookmark', 'tag', 'tags', 'gift', 'home',
-  'globe-2', 'globe-americas', 'globe-europe', 'globe-asia', 'globe-africa', 'globe-australia', 'globe-asia-australia',
+  'chevron-right', 'chevron-left', 'link', 'external-link'
 ];
 
 // ESM-compatible __dirname
@@ -31,17 +18,13 @@ function extractIcons(config: any) {
 
   function addIcon(icon: string) {
     if (!icon) return;
-    // Support both namespace:icon and single name (assume lucide if no namespace)
+    // Only include icons with a prefix (e.g. lucide:, logos:, etc)
     const match = icon.match(/^(?<ns>[^:]+):(?<name>.+)$/);
     if (match && match.groups) {
       const ns = match.groups.ns;
       const name = match.groups.name;
       if (!icons[ns]) icons[ns] = new Set();
       icons[ns].add(name);
-    } else {
-      // No namespace, treat as lucide
-      if (!icons.lucide) icons.lucide = new Set();
-      icons.lucide.add(icon);
     }
   }
 
@@ -63,7 +46,6 @@ function extractIcons(config: any) {
   for (const icon of DEFAULT_LUCIDE_ICONS) {
     icons.lucide.add(icon);
   }
-
   // Convert sets to arrays
   const result: Record<string, string[]> = {};
   for (const ns in icons) {

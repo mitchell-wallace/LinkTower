@@ -14,22 +14,22 @@
     },
     {
       "id": "1728534577186",
-      "icon": "logos:github-icon",
+      "icon": "github-blue",
       "url": "https://github.com"
     },
     {
       "id": "1728534577187",
-      "icon": "logos:x",
+      "icon": "X",
       "url": "https://x.com"
     },
     {
       "id": "1728534577185",
-      "icon": "email",
+      "icon": "Mail",
       "url": "mailto:contact@johndoe.example.com"
     },
     {
       "id": "1728534577184",
-      "icon": "link",
+      "icon": "lucide:link",
       "url": "https://johndoe.example.com"
     }
   ],
@@ -56,7 +56,7 @@
     {
       "id": "1728534585741",
       "title": "My YouTube Channel",
-      "icon": "youtube",
+      "icon": "lucide:youtube",
       "url": "https://youtube.com"
     }
   ]
