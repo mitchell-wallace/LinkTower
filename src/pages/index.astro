@@ -22,7 +22,8 @@ const posts = (await getCollection("blog")).sort(
     <Content />
     {
       SITE.blog ? (
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none px-0 py-12">
+        // <h2 class="pt-4 sm:pt-6 text-3xl font-semibold text-center">Blog</h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none px-0 py-8 sm:py-12">
           {posts.map((post: CollectionEntry<"blog">) => (
             <Post post={post} />
           ))}
