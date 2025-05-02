@@ -2,7 +2,7 @@
 title: Energy Weapons
 description: God's answer to a question I don't remember was that people need to be warned about UAPs.
 publicationDate: 2025-04-17
-sortOrder: 40
+sortOrder: 4.0
 
 # Dreamed: 2025-04-17
 # Written: 2025-04-17

@@ -2,7 +2,7 @@
 title: Dead Snakes
 description: God answered my prayer with this specific promise of protection.
 publicationDate: 2025-05-02
-sortOrder: 20
+sortOrder: 2.0
 
 # Dreamed: 2022-05-29
 # Written: 2022-05-29

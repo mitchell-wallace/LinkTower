@@ -2,7 +2,7 @@
 title: Asking the President
 description: Is Jesus waiting for a people with boldness to ask big things of Him?
 publicationDate: 2025-05-02
-sortOrder: 30
+sortOrder: 3.0
 
 # Dreamed: 2024-08-08
 # Written: 2024-08-08

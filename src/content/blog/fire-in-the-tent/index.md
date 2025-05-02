@@ -2,7 +2,7 @@
 title: Fire in the Tent
 description: God's people perish for lack of action. What would it take for us to step outside our comfort zone?
 publicationDate: 2025-02-04
-sortOrder: 10
+sortOrder: 1.0
 
 # Dreamed: 2022-05-29
 # Written: 2022-05-29
