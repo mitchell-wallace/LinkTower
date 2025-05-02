@@ -23,9 +23,20 @@ const posts = (await getCollection("blog")).sort(
     {
       SITE.blog ? (
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none px-0 py-12">
-          {posts.map((post: CollectionEntry<"blog">) => (
-            <Post post={post} />
-          ))}
+          {[...posts]
+            .sort((a, b) => {
+              const aOrder = a.data.sortOrder;
+              const bOrder = b.data.sortOrder;
+              if (aOrder != null && bOrder != null) {
+                return aOrder - bOrder;
+              }
+              if (aOrder != null) return -1;
+              if (bOrder != null) return 1;
+              return a.data.publicationDate.valueOf() - b.data.publicationDate.valueOf();
+            })
+            .map((post: CollectionEntry<"blog">) => (
+              <Post post={post} />
+            ))}
         </ul>
       ) : null
     }

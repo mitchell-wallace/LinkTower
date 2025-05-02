@@ -1,7 +1,8 @@
 ---
 title: Fire in the Tent
-description: The young people in the tent are God's people. They perish for lack of action. “These are my people” says the Lord. “Feed them.”
+description: God's people perish for lack of action. What would it take for us to step outside our comfort zone?
 publicationDate: 2025-02-04
+sortOrder: 10
 
 # Dreamed: 2022-05-29
 # Written: 2022-05-29
@@ -11,7 +12,9 @@ publicationDate: 2025-02-04
 
 This is the good part of a long and meandering dream. Yesterday someone asked me if I was a prophet and I didn't have a response, and he said like it would suck to be a prophet because then you'd have dreams and you'd wake up and you'd have to write them down.
 
-I guess I have to write this down. But only part of it is the part I have to write down.
+I guess I have to write this down.
+
+---
 
 I was in the wilderness leading a group of people. I found some kind of old building to use for our home base, so we decided to set up a sort of camp there. We didn't have walls, we didn't have a roof, but we had people, and we had a fire. Despite a lack of tangible shelter, I knew we were protected. We were actually happy, and had gratitude for where we were.
 
@@ -23,6 +26,8 @@ Then a little later, I was meeting with some young men from this other group, an
 
 I think this represents how in the final days to come I may have some sort of leadership role over a small-medium flock. We will see those deceived with their worldly comforts, but find assurance in the fact that we are not deceived. It will be literally absolute zero of my doing, and 100% all by my heavenly Father.
 
+---
+
 Then I had another dream section to share. I remembered the pieces in between when I woke up, and wondered how they might be important, but I knew the importance of writing things down if needed, so I stayed up. Now, these are the only two sections I remember, the important parts. This confirms to me that these are the important parts.
 
 I was part of a tent meeting, of a series called Share. It was full of teens and young adults. I was older than them. Then, off to the side, a fire started in the grass, and began to grow. I immediately stepped up to put out the fire lest it grow.
@@ -32,6 +37,8 @@ I tried to stomp it out with my shoes, but at first this was ineffective and it 
 There were many onlookers who failed to help. I think there was one at my side who was unable to help but provided encouragement. After putting out the hazardous flames, I was recovering from the stress and pressure of the situation, and sought to find some relief and wash my hands of the dirt. However, my efforts were thwarted; there was hand sanitiser available, but there were long lines for the bathrooms. Apparently everyone else was lining up to wash their hands first, when they didn't even help, didn't even get their hands dirty!
 
 Then while lining up I saw a man arrive who didn't even have hands, but stumps on the ends of his arms, and some sort of deformity around his feet as well. He was already speaking to a man at the door with a black shirt, a responsible man, but all others were ignoring him on account of his deformities. I felt uncomfortable and didn't want to approach him either but I had to. The dream ended as I was introducing myself.
+
+---
 
 The young people in the tent are God's people. **They perish for lack of action**. “These are my people” says the Lord. “Feed them.”
 

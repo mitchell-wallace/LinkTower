@@ -1,5 +1,4 @@
 import { defineCollection, z } from "astro:content";
-
 const blog = defineCollection({
   type: "content",
   schema: ({ image }) =>
@@ -14,6 +13,7 @@ const blog = defineCollection({
         .optional(),
       imageAlt: z.string().optional(),
       tags: z.array(z.string()).optional(),
+      sortOrder: z.number().optional(),
     }),
 });
 
