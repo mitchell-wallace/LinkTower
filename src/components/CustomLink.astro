@@ -3,45 +3,20 @@ import { Icon } from "astro-icon/components";
 const { link } = Astro.props;
 
 const linkClasses = [
-  // Base
-  "flex items-center gap-2 rounded-full px-6 py-3 text-lg transition-colors",
-
-  // Light mode
-  "bg-lightModeCustomLinkBackground",
-  "text-lightModeCustomLinkText",
-  "ring-2 ring-lightModeCustomLinkOutline",
-
-  // Hover
-  "hover:bg-lightModeCustomLinkBackgroundHover",
-  "hover:text-lightModeCustomLinkTextHover",
-  "hover:ring-lightModeCustomLinkOutlineHover",
-
-  // Dark mode
-  "dark:bg-darkModeCustomLinkBackground",
-  "dark:text-darkModeCustomLinkText",
-  "dark:ring-darkModeCustomLinkOutline",
-
-  // Dark Hover
-  "dark:hover:bg-darkModeCustomLinkBackgroundHover",
-  "dark:hover:text-darkModeCustomLinkTextHover",
-  "dark:hover:ring-darkModeCustomLinkOutlineHover"
+  // Base styling
+  "flex items-center gap-2 rounded-full px-6 py-3 text-lg transition-colors ring-2",
+  
+  // DaisyUI semantic colors
+  "bg-base-100 text-base-content ring-base-300",
+  "hover:bg-base-200 hover:ring-base-content/20"
 ].join(" ");
 
 const iconClasses = [
-  // Base
+  // Base styling
   "size-6 transition-colors",
   
-  // Light mode
-  "text-lightModeIconLinkText",
-  
-  // Hover
-  // "group-hover:text-lightModeIconLinkTextHover",
-  
-  // Dark mode
-  "dark:text-darkModeIconLinkText",
-  
-  // Dark Hover
-  // "group-hover:dark:text-darkModeIconLinkTextHover"
+  // DaisyUI semantic colors  
+  "text-base-content/70"
 ].join(" ");
 ---
 
@@ -60,7 +35,7 @@ const iconClasses = [
           {link.title}
         </p>
         {link.description ? (
-          <p class="text-sm text-lightModeForegroundMuted dark:text-darkModeForegroundMuted">
+          <p class="text-sm text-base-content/60">
             {link.description}
           </p>
         ) : null}

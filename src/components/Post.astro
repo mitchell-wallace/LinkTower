@@ -4,68 +4,41 @@ import { formatDate } from "@/lib/util";
 const { post } = Astro.props;
 
 const postItemClasses = [
-  // Base
-  "overflow-hidden rounded-lg shadow-md transition-colors",
+  // Base styling
+  "overflow-hidden rounded-lg shadow-md transition-colors ring-2",
   
-  // Light mode
-  "bg-lightModePostBackground",
-  "ring-2 ring-lightModePostOutline",
-  
-  // Hover
-  "hover:bg-lightModePostBackgroundHover",
-  "hover:ring-lightModePostOutlineHover",
-  
-  // Dark mode
-  "dark:bg-darkModePostBackground",
-  "dark:ring-darkModePostOutline",
-  
-  // Dark Hover
-  "dark:hover:bg-darkModePostBackgroundHover",
-  "dark:hover:ring-darkModePostOutlineHover"
+  // DaisyUI semantic colors
+  "bg-base-100 ring-base-300",
+  "hover:bg-base-200 hover:ring-base-content/20"
 ].join(" ");
 
 const gradientClasses = [
-  // Base
-  "w-full h-48 bg-gradient-to-br",
-  
-  // Light mode
-  "from-lightModePostFrom to-lightModePostTo",
-  
-  // Dark mode
-  "dark:from-darkModePostFrom dark:to-darkModePostTo"
+  // Base styling with DaisyUI-friendly gradient
+  "w-full h-48 bg-gradient-to-br from-base-200 to-base-300"
 ].join(" ");
 
 const titleClasses = [
-  // Base
+  // Base styling
   "text-xl font-semibold",
   
-  // Light mode
-  "text-lightModeForeground",
-  
-  // Dark mode
-  "dark:text-darkModeForeground"
+  // DaisyUI semantic colors
+  "text-base-content"
 ].join(" ");
 
 const descriptionClasses = [
-  // Base
+  // Base styling  
   "mt-2",
   
-  // Light mode
-  "text-lightModeForegroundMuted",
-  
-  // Dark mode
-  "dark:text-darkModeForegroundMuted"
+  // DaisyUI semantic colors
+  "text-base-content/70"
 ].join(" ");
 
 const timeClasses = [
-  // Base
+  // Base styling
   "mt-4 block text-sm",
   
-  // Light mode
-  "text-lightModeForegroundMuted",
-  
-  // Dark mode
-  "dark:text-darkModeForegroundMuted"
+  // DaisyUI semantic colors
+  "text-base-content/60"
 ].join(" ");
 ---
 

@@ -5,19 +5,12 @@ import BaseHead from "@/components/BaseHead.astro";
 import Footer from "@/components/Footer.astro";
 
 const bodyClasses = [
-  // Base
-  "mx-auto min-h-screen max-w-screen-sm p-3 font-sans sm:p-6",
-  "bg-fixed bg-gradient-to-b",
-  
-  // Light mode
-  "from-lightModeBackgroundFrom to-lightModeBackgroundTo",
-  
-  // Dark mode
-  "dark:from-darkModeBackgroundFrom dark:to-darkModeBackgroundTo"
+  // Base styling - gradient background is now handled in global.css via DaisyUI themes
+  "mx-auto min-h-screen max-w-screen-sm p-3 font-sans sm:p-6 bg-fixed"
 ].join(" ");
 ---
 
-<html lang="en">
+<html lang="en" data-theme="treelink-light">
   <BaseHead>
     <slot name="head" />
   </BaseHead>
@@ -26,5 +19,23 @@ const bodyClasses = [
       <slot />
     </main>
     <Footer />
+    
+    <script>
+      // Automatically switch theme based on system preference
+      function setThemeFromSystem() {
+        const html = document.documentElement;
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          html.setAttribute('data-theme', 'treelink-dark');
+        } else {
+          html.setAttribute('data-theme', 'treelink-light');
+        }
+      }
+      
+      // Set theme on initial load
+      setThemeFromSystem();
+      
+      // Listen for changes in system preference
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setThemeFromSystem);
+    </script>
   </body>
 </html>

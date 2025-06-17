@@ -35,9 +35,11 @@ Treelink++ is a fork of [Treelink](https://github.com/trevortylerlee/treelink) b
 - **Blog routing**: Dynamic routes in `src/pages/blog/[...slug].astro`
 
 ### Theme System
-- **CSS variables**: Defined in `src/styles/global.css` with separate light/dark mode colors
-- **Tailwind integration**: Custom color classes mapped to CSS variables in `tailwind.config.mjs`
-- **Gradient backgrounds**: Configurable background gradients for main page and blog posts
+- **DaisyUI integration**: Uses DaisyUI's semantic color system with custom "treelink-light" and "treelink-dark" themes
+- **Automatic theme switching**: JavaScript automatically switches themes based on system preferences (prefers-color-scheme)
+- **Semantic colors**: Uses DaisyUI semantic classes like `bg-base-100`, `text-base-content`, `ring-base-300`
+- **Custom themes**: Defined in `tailwind.config.mjs` with colors matching the original design
+- **Gradient backgrounds**: Handled in `src/styles/global.css` with theme-specific gradients
 
 ### Component Structure
 - **Layout**: `src/layouts/BaseLayout.astro` - Main page wrapper
@@ -55,9 +57,10 @@ Treelink++ is a fork of [Treelink](https://github.com/trevortylerlee/treelink) b
 3. Icons are automatically optimized based on usage in siteConfig.json
 
 ### Customizing Appearance
-- **Colors**: Modify CSS variables in `src/styles/global.css`
+- **Colors**: Modify DaisyUI theme definitions in `tailwind.config.mjs` 
 - **Typography**: Uses Tailwind Typography plugin for blog content
-- **Layout**: Adjust component styles and structure in respective .astro files
+- **Layout**: Components use semantic DaisyUI classes for consistent theming
+- **Custom themes**: Add new themes to the daisyui.themes array in Tailwind config
 
 ### Blog Management
 - **New posts**: Create folder in `src/content/blog/` with `index.md`
@@ -74,5 +77,16 @@ Treelink++ is a fork of [Treelink](https://github.com/trevortylerlee/treelink) b
 - `src/siteConfig.json` - All site content and configuration
 - `src/assets/profile-picture.jpg` - Profile image
 - `public/favicon.svg` - Favicon and related files
-- `src/styles/global.css` - Color scheme and CSS variables
+- `tailwind.config.mjs` - DaisyUI themes and color definitions
+- `src/styles/global.css` - Base styles and theme-specific gradients
 - `astro.config.mjs` - Site URL for production deployment
+
+## DaisyUI Theme Colors Used
+
+- `base-100` - Primary background color
+- `base-200` - Secondary background (hover states)
+- `base-300` - Borders and subtle backgrounds  
+- `base-content` - Primary text color
+- `base-content/70` - Muted text (70% opacity)
+- `base-content/60` - Very muted text (60% opacity)
+- `base-content/20` - Subtle hover borders (20% opacity)

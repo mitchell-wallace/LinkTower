@@ -28,6 +28,7 @@
     "@iconify-json/material-symbols-light": "^1.2.20",
     "@iconify-json/logos": "^1.2.4",
     "@tailwindcss/typography": "^0.5.15",
+    "daisyui": "^4.12.14",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.8"
