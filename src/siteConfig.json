@@ -35,30 +35,6 @@
       "id": "1728534577184",
       "icon": "lucide:link",
       "url": "https://johndoe.example.com",
-      "color": "info"
-    },
-    {
-      "id": "1728534577184",
-      "icon": "lucide:link",
-      "url": "https://johndoe.example.com",
-      "color": "success"
-    },
-    {
-      "id": "1728534577184",
-      "icon": "lucide:link",
-      "url": "https://johndoe.example.com",
-      "color": "warning"
-    },
-    {
-      "id": "1728534577184",
-      "icon": "lucide:link",
-      "url": "https://johndoe.example.com",
-      "color": "error"
-    },
-    {
-      "id": "1728534577184",
-      "icon": "lucide:link",
-      "url": "https://johndoe.example.com",
       "color": "base"
     }
   ],

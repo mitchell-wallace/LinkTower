@@ -11,14 +11,6 @@ export default {
     'bg-accent-100', 'bg-accent-200', 'ring-accent-300', 'hover:bg-accent-200', 'hover:ring-accent', 'text-accent', 'group-hover:text-accent-content',
     // Neutral colors
     'bg-neutral-100', 'bg-neutral-200', 'ring-neutral-300', 'hover:bg-neutral-200', 'hover:ring-neutral', 'text-neutral', 'group-hover:text-neutral-content',
-    // Info colors
-    'bg-info-100', 'bg-info-200', 'ring-info-300', 'hover:bg-info-200', 'hover:ring-info', 'text-info', 'group-hover:text-info-content',
-    // Success colors
-    'bg-success-100', 'bg-success-200', 'ring-success-300', 'hover:bg-success-200', 'hover:ring-success', 'text-success', 'group-hover:text-success-content',
-    // Warning colors
-    'bg-warning-100', 'bg-warning-200', 'ring-warning-300', 'hover:bg-warning-200', 'hover:ring-warning', 'text-warning', 'group-hover:text-warning-content',
-    // Error colors
-    'bg-error-100', 'bg-error-200', 'ring-error-300', 'hover:bg-error-200', 'hover:ring-error', 'text-error', 'group-hover:text-error-content',
   ],
   future: {
     hoverOnlyWhenSupported: true,
@@ -28,114 +20,66 @@ export default {
     themes: [
       {
         "treelink-light": {
-          "primary": "oklch(0.62 0.16 264)", // bright blue
           "primary-100": "oklch(0.92 0.04 264)", // very light blue
           "primary-200": "oklch(0.77 0.10 264)", // light blue
-          "primary-300": "oklch(0.47 0.22 264)", // medium blue
+          "primary-300": "oklch(0.62 0.16 264)", // bright blue
+          "primary-400": "oklch(0.47 0.22 264)", // medium blue
           "primary-content": "oklch(0.98 0.02 264)", // off-white with blue tint
 
-          "secondary": "oklch(0.52 0.04 237)", // muted slate blue
           "secondary-100": "oklch(0.82 0.01 237)", // very light slate
           "secondary-200": "oklch(0.67 0.02 237)", // light slate
-          "secondary-300": "oklch(0.37 0.06 237)", // medium slate
+          "secondary-300": "oklch(0.52 0.04 237)", // muted slate blue
+          "secondary-400": "oklch(0.37 0.06 237)", // medium slate
           "secondary-content": "oklch(0.98 0.02 237)", // off-white with slate tint
 
-          "accent": "oklch(0.70 0.14 195)", // bright cyan
           "accent-100": "oklch(0.90 0.04 195)", // very light cyan
           "accent-200": "oklch(0.80 0.09 195)", // light cyan
-          "accent-300": "oklch(0.55 0.19 195)", // medium cyan
+          "accent-300": "oklch(0.70 0.14 195)", // bright cyan
+          "accent-400": "oklch(0.55 0.19 195)", // medium cyan
           "accent-content": "oklch(0.12 0.02 195)", // dark slate with cyan tint
 
-          "neutral": "oklch(0.38 0.03 237)", // dark slate
           "neutral-100": "oklch(0.68 0.01 237)", // very light neutral
           "neutral-200": "oklch(0.53 0.02 237)", // light neutral
-          "neutral-300": "oklch(0.23 0.04 237)", // medium neutral
+          "neutral-300": "oklch(0.38 0.03 237)", // dark slate
+          "neutral-400": "oklch(0.23 0.04 237)", // medium neutral
           "neutral-content": "oklch(0.98 0.02 237)", // off-white with slate tint
 
           "base-100": "oklch(1.00 0.00 0)", // pure white
           "base-200": "oklch(0.93 0.01 237)", // light gray
           "base-300": "oklch(0.86 0.02 237)", // medium gray
           "base-content": "oklch(0.20 0.02 237)", // dark slate
-
-          "info": "oklch(0.68 0.15 225)", // sky blue
-          "info-100": "oklch(0.88 0.04 225)", // very light sky blue
-          "info-200": "oklch(0.78 0.09 225)", // light sky blue
-          "info-300": "oklch(0.53 0.20 225)", // medium sky blue
-          "info-content": "oklch(0.12 0.02 225)", // dark slate with blue tint
-
-          "success": "oklch(0.73 0.15 142)", // emerald green
-          "success-100": "oklch(0.93 0.04 142)", // very light green
-          "success-200": "oklch(0.83 0.09 142)", // light green
-          "success-300": "oklch(0.58 0.20 142)", // medium green
-          "success-content": "oklch(0.12 0.02 142)", // dark slate with green tint
-
-          "warning": "oklch(0.75 0.13 80)", // amber yellow
-          "warning-100": "oklch(0.95 0.03 80)", // very light amber
-          "warning-200": "oklch(0.85 0.08 80)", // light amber
-          "warning-300": "oklch(0.60 0.18 80)", // medium amber
-          "warning-content": "oklch(0.12 0.02 80)", // dark slate with yellow tint
-
-          "error": "oklch(0.63 0.20 27)", // coral red
-          "error-100": "oklch(0.83 0.05 27)", // very light coral
-          "error-200": "oklch(0.73 0.12 27)", // light coral
-          "error-300": "oklch(0.48 0.25 27)", // medium coral
-          "error-content": "oklch(0.98 0.02 27)", // off-white with red tint
         },
       },
       {
         "treelink-dark": {
-          "primary": "oklch(0.38 0.16 264)", // dark blue
           "primary-100": "oklch(0.68 0.04 264)", // light blue
           "primary-200": "oklch(0.53 0.10 264)", // medium blue
-          "primary-300": "oklch(0.23 0.22 264)", // very dark blue
+          "primary-300": "oklch(0.38 0.16 264)", // dark blue
+          "primary-400": "oklch(0.23 0.22 264)", // very dark blue
           "primary-content": "oklch(0.98 0.02 264)", // off-white with blue tint
 
-          "secondary": "oklch(0.48 0.04 237)", // dark slate blue
           "secondary-100": "oklch(0.78 0.01 237)", // light slate
           "secondary-200": "oklch(0.63 0.02 237)", // medium slate
-          "secondary-300": "oklch(0.33 0.06 237)", // very dark slate
+          "secondary-300": "oklch(0.48 0.04 237)", // dark slate blue
+          "secondary-400": "oklch(0.33 0.06 237)", // very dark slate
           "secondary-content": "oklch(0.98 0.02 237)", // off-white with slate tint
 
-          "accent": "oklch(0.30 0.14 195)", // dark cyan
           "accent-100": "oklch(0.60 0.04 195)", // light cyan
           "accent-200": "oklch(0.45 0.09 195)", // medium cyan
-          "accent-300": "oklch(0.15 0.19 195)", // very dark cyan
+          "accent-300": "oklch(0.30 0.14 195)", // dark cyan
+          "accent-400": "oklch(0.15 0.19 195)", // very dark cyan
           "accent-content": "oklch(0.98 0.02 195)", // off-white with cyan tint
 
-          "neutral": "oklch(0.38 0.03 237)", // dark slate
           "neutral-100": "oklch(0.68 0.01 237)", // light neutral
           "neutral-200": "oklch(0.53 0.02 237)", // medium neutral
-          "neutral-300": "oklch(0.23 0.04 237)", // very dark neutral
+          "neutral-300": "oklch(0.38 0.03 237)", // dark slate
+          "neutral-400": "oklch(0.23 0.04 237)", // very dark neutral
           "neutral-content": "oklch(0.98 0.02 237)", // off-white with slate tint
 
           "base-100": "oklch(0.20 0.02 237)", // charcoal gray
           "base-200": "oklch(0.29 0.02 237)", // dark gray
           "base-300": "oklch(0.38 0.03 237)", // medium dark gray
           "base-content": "oklch(0.97 0.00 237)", // warm white
-
-          "info": "oklch(0.32 0.15 225)", // dark sky blue
-          "info-100": "oklch(0.62 0.04 225)", // light sky blue
-          "info-200": "oklch(0.47 0.09 225)", // medium sky blue
-          "info-300": "oklch(0.17 0.20 225)", // very dark sky blue
-          "info-content": "oklch(0.98 0.02 225)", // off-white with blue tint
-
-          "success": "oklch(0.27 0.15 142)", // dark emerald green
-          "success-100": "oklch(0.57 0.04 142)", // light green
-          "success-200": "oklch(0.42 0.09 142)", // medium green
-          "success-300": "oklch(0.12 0.20 142)", // very dark green
-          "success-content": "oklch(0.98 0.02 142)", // off-white with green tint
-
-          "warning": "oklch(0.25 0.13 80)", // dark amber yellow
-          "warning-100": "oklch(0.55 0.03 80)", // light amber
-          "warning-200": "oklch(0.40 0.08 80)", // medium amber
-          "warning-300": "oklch(0.10 0.18 80)", // very dark amber
-          "warning-content": "oklch(0.98 0.02 80)", // off-white with yellow tint
-          
-          "error": "oklch(0.37 0.20 27)", // dark coral red
-          "error-100": "oklch(0.67 0.05 27)", // light coral
-          "error-200": "oklch(0.52 0.12 27)", // medium coral
-          "error-300": "oklch(0.22 0.25 27)", // very dark coral
-          "error-content": "oklch(0.98 0.02 27)", // off-white with red tint
         },
       },
     ],
