@@ -12,13 +12,19 @@ const { link } = Astro.props;
       : "flex items-center gap-2 rounded-full px-6 py-3 text-lg transition-colors ring-2 bg-base-100 text-base-content ring-base-300 hover:bg-base-200 hover:ring-base-content/20"}
   >
     {link.image && (
-      <div class="mb-3 -mx-6 -mt-3" style="width: calc(100% + 3rem);">
+      <div class="mb-3 -mx-6 -mt-3 max-w-[calc(100%+3rem)]"
+      >
         <img
           src={link.image}
           alt={link.imageAlt || link.title}
-          class="w-full object-cover object-center"
-          onload="this.style.aspectRatio = this.naturalWidth * 2 >= this.naturalHeight * 3 ? 'auto' : '3/2'"
-          style="aspect-ratio: 3/2;"
+          class="w-full object-cover object-center aspect-[3/2]"
+          onload="
+            const ratio = this.naturalWidth / this.naturalHeight;
+            if (ratio > 3/2) {
+              this.classList.remove('aspect-[3/2]');
+              this.classList.add(`aspect-[${this.naturalWidth}/${this.naturalHeight}]`);
+            }
+          "
         />
       </div>
     )}
