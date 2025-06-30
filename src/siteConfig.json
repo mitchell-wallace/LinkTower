@@ -45,7 +45,7 @@
       "icon": "material-symbols:stylus-note-outline-rounded",
       "description": "I write about tech and programming mostly",
       "url": "https://johndoe.example.com/blog",
-      "color": "primary"
+      "color": "neutral"
     },
     {
       "id": "1728534585739",
@@ -57,15 +57,13 @@
       "id": "1728534585740",
       "title": "Recommended Books",
       "icon": "fluent-emoji-high-contrast:books",
-      "url": "https://johndoe.example.com/books",
-      "color": "accent"
+      "url": "https://johndoe.example.com/books"
     },
     {
       "id": "1728534585741",
       "title": "My YouTube Channel",
       "icon": "lucide:youtube",
-      "url": "https://youtube.com",
-      "color": "neutral"
+      "url": "https://youtube.com"
     }
   ]
 }
