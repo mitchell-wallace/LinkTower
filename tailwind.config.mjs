@@ -53,18 +53,18 @@ export default {
       },
       {
         "treelink-dark": {
-          // Primary brand color - same vibrant blue maintains brand consistency across themes
-          "primary": "oklch(0.62 0.16 264)",
+          // Primary brand color - darker blue for dark theme (100-62=38% lightness)
+          "primary": "oklch(0.38 0.16 264)",
           // Text color for primary backgrounds - high contrast white with subtle blue tint
           "primary-content": "oklch(0.98 0.02 264)",
-          // Secondary color - same muted slate works well in dark mode
-          "secondary": "oklch(0.52 0.04 237)",
+          // Secondary color - darker slate for dark theme (100-52=48% lightness)
+          "secondary": "oklch(0.48 0.04 237)",
           // Text color for secondary backgrounds - high contrast white with subtle slate tint
           "secondary-content": "oklch(0.98 0.02 237)",
-          // Accent color - same bright cyan provides good contrast in dark mode
-          "accent": "oklch(0.70 0.14 195)", 
-          // Text color for accent backgrounds - high contrast dark with subtle cyan tint
-          "accent-content": "oklch(0.12 0.02 195)",
+          // Accent color - darker cyan for dark theme (100-70=30% lightness)
+          "accent": "oklch(0.30 0.14 195)", 
+          // Text color for accent backgrounds - high contrast white with subtle cyan tint
+          "accent-content": "oklch(0.98 0.02 195)",
           // Neutral color - same balanced slate for consistency
           "neutral": "oklch(0.38 0.03 237)",
           // Text color for neutral backgrounds - high contrast white with subtle slate tint
@@ -77,20 +77,20 @@ export default {
           "base-300": "oklch(0.38 0.03 237)", 
           // Main text color - light warm gray for comfortable dark mode reading
           "base-content": "oklch(0.97 0.00 237)",
-          // Informational blue - same as light mode for consistency
-          "info": "oklch(0.68 0.15 225)",
-          // Text color for info backgrounds - high contrast dark with subtle blue tint
-          "info-content": "oklch(0.12 0.02 225)",
-          // Success green - same as light mode for universal recognition
-          "success": "oklch(0.73 0.15 142)",
-          // Text color for success backgrounds - high contrast dark with subtle green tint
-          "success-content": "oklch(0.12 0.02 142)",
-          // Warning amber - same as light mode for consistent meaning
-          "warning": "oklch(0.75 0.13 80)", 
-          // Text color for warning backgrounds - high contrast dark with subtle amber tint
-          "warning-content": "oklch(0.12 0.02 80)",
-          // Error red - same as light mode for universal danger recognition
-          "error": "oklch(0.63 0.20 27)",
+          // Informational blue - darker blue for dark theme (100-68=32% lightness)
+          "info": "oklch(0.32 0.15 225)",
+          // Text color for info backgrounds - high contrast white with subtle blue tint
+          "info-content": "oklch(0.98 0.02 225)",
+          // Success green - darker green for dark theme (100-73=27% lightness)
+          "success": "oklch(0.27 0.15 142)",
+          // Text color for success backgrounds - high contrast white with subtle green tint
+          "success-content": "oklch(0.98 0.02 142)",
+          // Warning amber - darker amber for dark theme (100-75=25% lightness)
+          "warning": "oklch(0.25 0.13 80)", 
+          // Text color for warning backgrounds - high contrast white with subtle amber tint
+          "warning-content": "oklch(0.98 0.02 80)",
+          // Error red - darker red for dark theme (100-63=37% lightness)
+          "error": "oklch(0.37 0.20 27)",
           // Text color for error backgrounds - high contrast white with subtle red tint
           "error-content": "oklch(0.98 0.02 27)",
         },
