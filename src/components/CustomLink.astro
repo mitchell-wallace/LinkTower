@@ -26,11 +26,13 @@ const iconClasses = [
     class={link.image ? "flex flex-col rounded-3xl px-6 py-3 text-lg transition-colors ring-2 bg-base-100 text-base-content ring-base-300 hover:bg-base-200 hover:ring-base-content/20 overflow-hidden" : linkClasses}
   >
     {link.image && (
-      <div class="w-full mb-3 -mx-6 -mt-3">
+      <div class="mb-3 -mx-6 -mt-3" style="width: calc(100% + 3rem);">
         <img
           src={link.image}
           alt={link.imageAlt || link.title}
-          class="w-full aspect-square object-cover object-center"
+          class="w-full object-cover object-center"
+          onload="this.style.aspectRatio = this.naturalWidth >= this.naturalHeight ? 'auto' : '1/1'"
+          style="aspect-ratio: 1/1;"
         />
       </div>
     )}
