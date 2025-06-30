@@ -2,28 +2,14 @@
 import { Icon } from "astro-icon/components";
 const { link } = Astro.props;
 
-const linkClasses = [
-  // Base styling
-  "flex items-center gap-2 rounded-full px-6 py-3 text-lg transition-colors ring-2",
-  
-  // DaisyUI semantic colors
-  "bg-base-100 text-base-content ring-base-300",
-  "hover:bg-base-200 hover:ring-base-content/20"
-].join(" ");
-
-const iconClasses = [
-  // Base styling
-  "size-6 transition-colors",
-  
-  // DaisyUI semantic colors  
-  "text-base-content/70"
-].join(" ");
 ---
 
 <li>
   <a
     href={link.url}
-    class={link.image ? "flex flex-col rounded-3xl px-6 py-3 text-lg transition-colors ring-2 bg-base-100 text-base-content ring-base-300 hover:bg-base-200 hover:ring-base-content/20 overflow-hidden" : linkClasses}
+    class={link.image 
+      ? "flex flex-col rounded-3xl px-6 py-3 text-lg transition-colors ring-2 bg-base-100 text-base-content ring-base-300 hover:bg-base-200 hover:ring-base-content/20 overflow-hidden" 
+      : "flex items-center gap-2 rounded-full px-6 py-3 text-lg transition-colors ring-2 bg-base-100 text-base-content ring-base-300 hover:bg-base-200 hover:ring-base-content/20"}
   >
     {link.image && (
       <div class="mb-3 -mx-6 -mt-3" style="width: calc(100% + 3rem);">
@@ -39,7 +25,7 @@ const iconClasses = [
     <div class="flex items-center justify-between w-full">
       <Icon
         name={link.icon ?? "link"}
-        class={iconClasses}
+        class="size-6 transition-colors text-base-content/70"
       />
       <div class="flex-1 text-center">
         <p class="font-semibold">
@@ -53,7 +39,7 @@ const iconClasses = [
       </div>
       <Icon
         name={"lucide:chevron-right"}
-        class={iconClasses}
+        class="size-6 transition-colors text-base-content/70"
       />
     </div>
   </a>
