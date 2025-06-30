@@ -18,55 +18,30 @@ export default {
   theme: {
     extend: {
       colors: {
-          "primary-100": "oklch(0.92 0.04 264)", // very light blue
-          "primary-200": "oklch(0.77 0.10 264)", // light blue
-          "primary-300": "oklch(0.62 0.16 264)", // bright blue
-          "primary-content": "oklch(0.98 0.02 264)", // off-white with blue tint
+          "primary-100": "var(--primary-100)",
+          "primary-200": "var(--primary-200)",
+          "primary-300": "var(--primary-300)",
+          "primary-content": "var(--primary-content)",
 
-          "secondary-100": "oklch(0.82 0.01 237)", // very light slate
-          "secondary-200": "oklch(0.67 0.02 237)", // light slate
-          "secondary-300": "oklch(0.52 0.04 237)", // muted slate blue
-          "secondary-content": "oklch(0.98 0.02 237)", // off-white with slate tint
+          "secondary-100": "var(--secondary-100)",
+          "secondary-200": "var(--secondary-200)",
+          "secondary-300": "var(--secondary-300)",
+          "secondary-content": "var(--secondary-content)",
 
-          "accent-100": "oklch(0.90 0.04 195)", // very light cyan
-          "accent-200": "oklch(0.80 0.09 195)", // light cyan
-          "accent-300": "oklch(0.70 0.14 195)", // bright cyan
-          "accent-content": "oklch(0.12 0.02 195)", // dark slate with cyan tint
+          "accent-100": "var(--accent-100)",
+          "accent-200": "var(--accent-200)",
+          "accent-300": "var(--accent-300)",
+          "accent-content": "var(--accent-content)",
 
-          "neutral-100": "oklch(0.68 0.01 237)", // very light neutral
-          "neutral-200": "oklch(0.53 0.02 237)", // light neutral
-          "neutral-300": "oklch(0.38 0.03 237)", // dark slate
-          "neutral-content": "oklch(0.98 0.02 237)", // off-white with slate tint
+          "neutral-100": "var(--neutral-100)",
+          "neutral-200": "var(--neutral-200)",
+          "neutral-300": "var(--neutral-300)",
+          "neutral-content": "var(--neutral-content)",
 
-          "base-100": "oklch(1.00 0.00 0)", // pure white
-          "base-200": "oklch(0.93 0.01 237)", // light gray
-          "base-300": "oklch(0.86 0.02 237)", // medium gray
-          "base-content": "oklch(0.20 0.02 237)", // dark slate
-
-          "dark-primary-100": "oklch(0.53 0.10 264)", // medium blue
-          "dark-primary-200": "oklch(0.38 0.16 264)", // dark blue
-          "dark-primary-300": "oklch(0.23 0.22 264)", // very dark blue
-          "dark-primary-content": "oklch(0.98 0.02 264)", // off-white with blue tint
-
-          "dark-secondary-100": "oklch(0.63 0.02 237)", // medium slate
-          "dark-secondary-200": "oklch(0.48 0.04 237)", // dark slate blue
-          "dark-secondary-300": "oklch(0.33 0.06 237)", // very dark slate
-          "dark-secondary-content": "oklch(0.98 0.02 237)", // off-white with slate tint
-
-          "dark-accent-100": "oklch(0.45 0.09 195)", // medium cyan
-          "dark-accent-200": "oklch(0.30 0.14 195)", // dark cyan
-          "dark-accent-300": "oklch(0.15 0.19 195)", // very dark cyan
-          "dark-accent-content": "oklch(0.98 0.02 195)", // off-white with cyan tint
-
-          "dark-neutral-100": "oklch(0.68 0.01 237)", // light neutral
-          "dark-neutral-200": "oklch(0.53 0.02 237)", // medium neutral
-          "dark-neutral-300": "oklch(0.38 0.03 237)", // dark slate
-          "dark-neutral-content": "oklch(0.98 0.02 237)", // off-white with slate tint
-
-          "dark-base-100": "oklch(0.20 0.02 237)", // charcoal gray
-          "dark-base-200": "oklch(0.29 0.02 237)", // dark gray
-          "dark-base-300": "oklch(0.38 0.03 237)", // medium dark gray
-          "dark-base-content": "oklch(0.97 0.00 237)", // warm white
+          "base-100": "var(--base-100)",
+          "base-200": "var(--base-200)",
+          "base-300": "var(--base-300)",
+          "base-content": "var(--base-content)",
       }
     }
   },
