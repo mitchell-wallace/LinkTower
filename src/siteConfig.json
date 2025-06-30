@@ -3,18 +3,18 @@
   "bio": "Personal website and link collection",
   "profilePicture": "/profile-picture.jpg",
   "url": "https://johndoe.example.com",
-  "blog": false,
+  "blog": true,
   "contactFormEnabled": true,
   "web3FormsAccessKey": "YOUR_ACCESS_KEY_HERE",
   "iconLinks": [
     {
       "id": "1728534577188",
-      "icon": "logos:youtube-icon",
+      "icon": "Youtube",
       "url": "https://youtube.com"
     },
     {
       "id": "1728534577186",
-      "icon": "github-blue",
+      "icon": "Github2",
       "url": "https://github.com"
     },
     {
