@@ -1,6 +1,7 @@
 ---
 title: Dead Snakes
-description: God answered my prayer with this specific promise of protection.
+description: Out would come a small head like that of a snake, with mouth frozen wide open. Bodies of various lengths would then follow. Some tubes were already clean, others had a short snake, others had a longer snake. However, all of these snakes were lifeless as they were squeezed from the tubes, and their venom would be neutralised and turn to vapour as they were extracted.
+# description: God answered my prayer with this specific promise of protection.
 publicationDate: 2025-05-02
 sortOrder: 2.0
 

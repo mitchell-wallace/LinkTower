@@ -1,6 +1,6 @@
 ---
 title: Red Fox 2
-description: Red Fox 2
+description: The small fuzzy red animal bravely leaped out into the air, with its gliding membranes outstretched. At first it descended steeply, and appeared to be in great danger, but as it fell and picked up speed, it's ability to glide strengthened. Its momentum remained yet was redirected to a shallower angle of descent
 publicationDate: 2025-08-11
 sortOrder: 9.0
 

@@ -1,6 +1,7 @@
 ---
 title: Great Lights Falling
-description: God's people perish for lack of action. What would it take for us to step outside our comfort zone?
+description: We were hesitant to do anything about these great lights, for we feared what light would remain if we would not have these lights; yet it became clear to us that we needed to address this problem. The next thing I saw was that these great lights were dislodged from the ceiling without hands.
+# description: God's people perish for lack of action. What would it take for us to step outside our comfort zone?
 publicationDate: 2025-07-17
 sortOrder: 5.0
 

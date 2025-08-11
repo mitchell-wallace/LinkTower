@@ -1,6 +1,7 @@
 ---
 title: Fire in the Tent
-description: God's people perish for lack of action. What would it take for us to step outside our comfort zone?
+description: I then got down and started scraping up dirt to heap on the fire, and continued stomping the smaller parts, until it was finally put out. There were many onlookers who failed to help. There was one at my side who was unable to help but provided encouragement.
+# description: God's people perish for lack of action. What would it take for us to step outside our comfort zone?
 publicationDate: 2025-02-04
 sortOrder: 1.0
 
@@ -34,7 +35,7 @@ I was part of a tent meeting, of a series called Share. It was full of teens and
 
 I tried to stomp it out with my shoes, but at first this was ineffective and it only seemed to grow. I then got down and started scraping up dirt to heap on the fire, and continued stomping the smaller parts, until it was finally put out.
 
-There were many onlookers who failed to help. I think there was one at my side who was unable to help but provided encouragement. After putting out the hazardous flames, I was recovering from the stress and pressure of the situation, and sought to find some relief and wash my hands of the dirt. However, my efforts were thwarted; there was hand sanitiser available, but there were long lines for the bathrooms. Apparently everyone else was lining up to wash their hands first, when they didn't even help, didn't even get their hands dirty!
+There were many onlookers who failed to help. There was one at my side who was unable to help but provided encouragement. After putting out the hazardous flames, I was recovering from the stress and pressure of the situation, and sought to find some relief and wash my hands of the dirt. However, my efforts were thwarted; there was hand sanitiser available, but there were long lines for the bathrooms. Apparently everyone else was lining up to wash their hands first, when they didn't even help, didn't even get their hands dirty!
 
 Then while lining up I saw a man arrive who didn't even have hands, but stumps on the ends of his arms, and some sort of deformity around his feet as well. He was already speaking to a man at the door with a black shirt, a responsible man, but all others were ignoring him on account of his deformities. I felt uncomfortable and didn't want to approach him either but I had to. The dream ended as I was introducing myself.
 
