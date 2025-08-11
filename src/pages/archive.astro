@@ -155,8 +155,14 @@ const navLinkClasses = [
           // Then filter
           let visible = 0;
           for (const li of items) {
-            const hay = (li.textContent || '').toLowerCase();
-            const show = query === '' || hay.includes(query);
+            // Search across all visible content: title, description, date, tags
+            const title = (li.dataset.title || '').toLowerCase();
+            const description = (li.dataset.description || '').toLowerCase();
+            const formattedDate = (li.dataset.formattedDate || '').toLowerCase();
+            const tags = (li.dataset.tags || '').toLowerCase();
+            
+            const searchableContent = `${title} ${description} ${formattedDate} ${tags}`;
+            const show = query === '' || searchableContent.includes(query);
             li.style.display = show ? '' : 'none';
             if (show) visible++;
           }

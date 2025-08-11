@@ -2,6 +2,12 @@
 import { Icon } from "astro-icon/components";
 const { link } = Astro.props;
 
+// Format tags for display
+const formatTags = (tags: string[] | undefined) => {
+  if (!tags || tags.length === 0) return null;
+  return tags.join(" • ");
+};
+
 // Explicit color mapping to ensure all classes are visible to Tailwind during build
 const COLOR_MAP = {
   base: {
@@ -87,6 +93,20 @@ const linkClasses = link.image
             {link.description}
           </p>
         ) : null}
+        {(link.date || link.tags) && (
+          <div class={`mt-2 text-xs ${colors.subtext} flex flex-wrap justify-center gap-1`}>
+            {link.date && (
+              <span class="px-2 py-1 bg-base-200/50 rounded-full">
+                {link.date}
+              </span>
+            )}
+            {link.tags && formatTags(link.tags) && (
+              <span class="px-2 py-1 bg-base-200/50 rounded-full">
+                {formatTags(link.tags)}
+              </span>
+            )}
+          </div>
+        )}
       </div>
       <Icon
         name={"lucide:chevron-right"}

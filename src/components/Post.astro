@@ -8,7 +8,9 @@ const { post, refFrom } = Astro.props as { post: any; refFrom?: string };
 const linkData = {
   id: post.slug,
   title: post.data.title,
-  description: `${formatDate(post.data.publicationDate)} • ${post.data.description}`,
+  description: post.data.description,
+  date: formatDate(post.data.publicationDate),
+  tags: post.data.tags,
   url: `/blog/${post.slug}${refFrom ? `?ref=${encodeURIComponent(refFrom)}` : ""}`,
   icon: "lucide:file-text",
   image: post.data.image?.src,
@@ -17,6 +19,13 @@ const linkData = {
 
 ---
 
-<div data-title={post.data.title} data-date={post.data.publicationDate.toISOString()} data-sort-order={post.data.sortOrder ?? ""}>
+<div 
+  data-title={post.data.title} 
+  data-date={post.data.publicationDate.toISOString()} 
+  data-sort-order={post.data.sortOrder ?? ""}
+  data-description={post.data.description}
+  data-tags={post.data.tags ? post.data.tags.join(" ") : ""}
+  data-formatted-date={formatDate(post.data.publicationDate)}
+>
   <CustomLink link={linkData} />
 </div>
