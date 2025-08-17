@@ -4,6 +4,7 @@ import { ViewTransitions } from "astro:transitions";
 import { SITE } from "@/siteConfig";
 
 import Favicons from "@/components/head/Favicons.astro";
+import Analytics from "@/components/head/Analytics.astro";
 ---
 
 <head>
@@ -39,6 +40,7 @@ import Favicons from "@/components/head/Favicons.astro";
 
   <ViewTransitions />
   <Favicons />
+  <Analytics />
 
   <slot />
 </head>

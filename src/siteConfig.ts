@@ -10,6 +10,8 @@ export interface SiteConfiguration {
   blogHomePostLimit?: number;
   contactFormEnabled: boolean;
   web3FormsAccessKey: string;
+  /** Umami analytics website ID */
+  umamiWebsiteId: string;
   iconLinks: IconLink[];
   customLinks: CustomLink[];
 }
