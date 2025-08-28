@@ -3,7 +3,6 @@ title: Energy Weapons
 description: But then I heard screams in the distance, and standing as high as I could I saw three aircraft hovering over the city, and using energy weapons directed down at the city. Two of them had red beams and one had a golden beam. I could hear screams and knew they were attacking people.
 # description: God's answer to a question I don't remember was that people need to be warned about UAPs.
 publicationDate: 2025-04-17
-sortOrder: 4.0
 
 # Dreamed: 2025-04-17
 # Written: 2025-04-17
