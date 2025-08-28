@@ -1,8 +1,8 @@
 ---
 title: The Blue Woman and the Thief
 description: Though the thief's movements appeared casual, they were very carefully calculated; and as soon as he determined that he would not shake her off any time soon, he struck; snatching the most valuable ornament he could find, he grabbed it and made a run for it, hoping to outrun and evade the woman.
-dreamedDate: 2022-07-20
-writtenDate: 2022-07-20
+dreamedDate: 2025-07-20
+writtenDate: 2025-07-20
 firstSharedDate: 2025-08-11
 publicationDate: 2025-08-11
 sortOrder: 2.0

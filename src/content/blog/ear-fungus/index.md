@@ -1,8 +1,8 @@
 ---
 title: Ear Fungus
 description: The physician who was with me told me plainly that I would see no success in attempting this, and I needed his intervention. At length I consented for the physician to do his work on my ears, and before I knew it he was finished. He showed me three pieces of fungus he had extracted from my ears.
-dreamedDate: 2022-08-11
-writtenDate: 2022-08-11
+dreamedDate: 2025-08-11
+writtenDate: 2025-08-11
 firstSharedDate: 2025-08-11
 publicationDate: 2025-08-11
 sortOrder: 2.0
