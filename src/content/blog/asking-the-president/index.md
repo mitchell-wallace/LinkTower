@@ -1,14 +1,12 @@
 ---
 title: Asking the President
 description: We stopped, looking onwards and wondering what was next. On the horizon we saw a land of green. Looking behind us, there were many others following after us, some on the ridge and more on the low ground. Though a small number were ready to journey onwards, we could not do so when so many of those following after us were so far behind.
-# description: Is Jesus waiting for a people with boldness to ask big things of Him?
+dreamedDate: 2024-08-08
+writtenDate: 2024-08-08
+firstSharedDate: 2025-05-02
 publicationDate: 2025-05-02
 sortOrder: 4.0
 
-# Dreamed: 2024-08-08
-# Written: 2024-08-08
-# FirstShared: 2025-05-02
-# Published: 2025-05-02
 ---
 
 I was amidst a group of several walking along a low ridge in a barren land. This was a path not travelled. Surrounding this ridge was a low and flat land in all directions. We reached a point where the ridge stopped, and so we stopped, looking onwards and wondering what was next. On the horizon we saw a land of green.

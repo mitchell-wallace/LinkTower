@@ -1,13 +1,11 @@
 ---
 title: Go up the Mountain
 description: I was made to understand that all my problems would go away if I would only go up the mountain every day and labour for him as he called me to. Further, I was given an opportunity to return in time, and do things different with the knowledge of the experience I had. It sounded too good to be true, but it was given to me. The master forgave exactly as if I had never spurned his care. 
+dreamedDate: 2024-11-29
+writtenDate: 2024-11-29
+firstSharedDate: 2025-08-28
 publicationDate: 2025-08-28
 sortOrder: 2.5
-
-# Dreamed: 2024-11-29
-# Written: 2024-11-29
-# FirstShared: 2025-08-28
-# Published: 2025-08-28
 ---
 
 I was a criminal on the run. In the middle of the night, when things seemed darkest, a strong vehicle like a Hummer brought me to the mountain. It was steep and impossible, but I was brought directly to the very top of the mountain.

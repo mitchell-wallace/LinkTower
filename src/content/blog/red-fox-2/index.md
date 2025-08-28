@@ -1,13 +1,11 @@
 ---
 title: Red Fox 2
 description: The small fuzzy red animal bravely leaped out into the air, with its gliding membranes outstretched. At first it descended steeply, and appeared to be in great danger, but as it fell and picked up speed, it's ability to glide strengthened. Its momentum remained yet was redirected to a shallower angle of descent
+dreamedDate: 2025-08-11
+writtenDate: 2025-08-11
+firstSharedDate: 2025-08-11
 publicationDate: 2025-08-11
 sortOrder: 3.0
-
-# Dreamed: 2025-08-11
-# Written: 2025-08-11
-# FirstShared: 2025-08-11
-# Published: 2025-08-11
 ---
 
 Which animal had the greatest prayer experience? Not the Tigger who jumps around, but the Red Fox 2, a creature made to glide.

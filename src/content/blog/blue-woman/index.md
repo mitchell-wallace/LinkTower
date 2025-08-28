@@ -1,13 +1,12 @@
 ---
 title: The Blue Woman and the Thief
 description: Though the thief's movements appeared casual, they were very carefully calculated; and as soon as he determined that he would not shake her off any time soon, he struck; snatching the most valuable ornament he could find, he grabbed it and made a run for it, hoping to outrun and evade the woman.
+dreamedDate: 2022-07-20
+writtenDate: 2022-07-20
+firstSharedDate: 2025-08-11
 publicationDate: 2025-08-11
 sortOrder: 2.0
 
-# Dreamed: 2022-07-20
-# Written: 2022-07-20
-# FirstShared: 2025-08-11
-# Published: 2025-08-11
 ---
 
 I had this dream from the perspective of the thief, and it kind of reminded me of thieving in the Elders Scrolls games, but I know the thief is not me.

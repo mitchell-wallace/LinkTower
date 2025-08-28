@@ -1,14 +1,11 @@
 ---
 title: Fire in the Tent
 description: I then got down and started scraping up dirt to heap on the fire, and continued stomping the smaller parts, until it was finally put out. There were many onlookers who failed to help. There was one at my side who was unable to help but provided encouragement.
-# description: God's people perish for lack of action. What would it take for us to step outside our comfort zone?
-publicationDate: 2025-02-04
+dreamedDate: 2022-05-29
+writtenDate: 2022-05-29
+firstSharedDate: 2025-02-04
+publicationDate: 2025-04-27
 sortOrder: 1.0
-
-# Dreamed: 2022-05-29
-# Written: 2022-05-29
-# FirstShared: 2025-02-04
-# Published: 2025-04-27
 ---
 
 This is the good part of a long and meandering dream. Yesterday someone asked me if I was a prophet and I didn't have a response, and he said like it would suck to be a prophet because then you'd have dreams and you'd wake up and you'd have to write them down.

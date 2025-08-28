@@ -1,12 +1,11 @@
 ---
 title: The Army of Youth
 description: There were a series of camp meetings, with youth gathered as sand on the seashore. There was one Speaker. These were the youth who were unreservedly committed to Christ. They kept coming back year after year. They did not make excuses of work or finances; they were all in.
+dreamedDate: 2023-05-15
+writtenDate: 2023-05-15
+firstSharedDate: 2025-08-28
 publicationDate: 2025-08-28
-
-# Dreamed: 2023-05-15
-# Written: 2023-05-15
-# FirstShared: 2025-08-28
-# Published: 2025-08-28
+sortOrder: 2.0
 ---
 
 Before the closing of the work, the youth must be inspired and equipped. This is the work of the Holy Spirit. I believe this dream is symbolic of the Holy Spirit speaking to youth worldwide.

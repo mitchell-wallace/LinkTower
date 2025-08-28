@@ -1,12 +1,11 @@
 ---
 title: Ear Fungus
 description: The physician who was with me told me plainly that I would see no success in attempting this, and I needed his intervention. At length I consented for the physician to do his work on my ears, and before I knew it he was finished. He showed me three pieces of fungus he had extracted from my ears.
+dreamedDate: 2022-08-11
+writtenDate: 2022-08-11
+firstSharedDate: 2025-08-11
 publicationDate: 2025-08-11
-
-# Dreamed: 2022-08-11
-# Written: 2022-08-11
-# FirstShared: 2025-08-11
-# Published: 2025-08-11
+sortOrder: 2.0
 ---
 
 I had discovered a few dark dots in my ears; one spot on the hollow beside the ear canal and another on the ear lobe, the same on each side. They were dark, and about the size of spots of green mould as they begin to grow on old bread; perhaps 1-1.5mm in diameter.
