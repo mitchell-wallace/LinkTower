@@ -46,10 +46,10 @@ const titleClasses = [
 
 const publishDateClasses = [
   // Base
-  "text-center text-md",
+  "text-center text-sm",
   
   // Light mode
-  "text-base-content/70"
+  "text-base-content/50"
 ].join(" ");
 ---
 
@@ -81,6 +81,11 @@ const publishDateClasses = [
     >
       Published {formatDate(entry.data.publicationDate)}
     </p>
+    {entry.data.dreamedDate && (
+      <p class={publishDateClasses}>
+        Dreamed on {formatDate(entry.data.dreamedDate)}
+      </p>
+    )}
     <!-- <br class="my-6 opacity-50 border-base-content" /> -->
     <div class="prose mx-auto my-20 dark:prose-invert">
       <Content />
