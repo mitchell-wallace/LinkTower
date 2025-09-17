@@ -2,36 +2,121 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
-import { SITE } from "@/siteConfig.ts";
-
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SeoPost from "@/components/head/SeoPost.astro";
 
 import { formatDate } from "@/lib/util";
+import {
+  getLatestEntry,
+  getRevisionMeta,
+  groupBlogEntries,
+  sortRevisionsAscending,
+} from "@/lib/blog";
+
+interface RevisionOption {
+  id: string;
+  label: string;
+  href: string;
+  date: Date;
+}
 
 interface Props {
   entry: CollectionEntry<"blog">;
+  revisions: RevisionOption[];
+  selectedRevisionId: string;
 }
 
 export async function getStaticPaths() {
   const blog = await getCollection("blog");
-  return blog.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  const groups = groupBlogEntries(blog);
+
+  const paths: Array<{ params: { slug: string }; props: Props }> = [];
+
+  for (const [baseSlug, group] of groups) {
+    if (!group.original) continue;
+
+    const sortedRevisions = sortRevisionsAscending(group.revisions);
+
+    const revisionOptions: RevisionOption[] = [
+      {
+        id: "original",
+        label: "Original",
+        href: `/blog/${baseSlug}/original`,
+        date: group.original.data.revisionDate ?? group.original.data.publicationDate,
+      },
+    ];
+
+    for (const revision of sortedRevisions) {
+      const meta = getRevisionMeta(revision);
+      if (!meta.revisionSegment) continue;
+      revisionOptions.push({
+        id: meta.revisionSegment,
+        label: `Revision ${meta.revisionNumber}`,
+        href: `/blog/${revision.slug}`,
+        date: revision.data.revisionDate ?? revision.data.publicationDate,
+      });
+    }
+
+    const latestEntry = getLatestEntry(group);
+    const latestMeta = latestEntry ? getRevisionMeta(latestEntry) : undefined;
+    const latestRevisionId = latestMeta?.revisionSegment ?? "original";
+
+    if (latestEntry) {
+      paths.push({
+        params: { slug: baseSlug },
+        props: {
+          entry: latestEntry,
+          revisions: revisionOptions,
+          selectedRevisionId: latestRevisionId,
+        },
+      });
+    }
+
+    paths.push({
+      params: { slug: `${baseSlug}/original` },
+      props: {
+        entry: group.original,
+        revisions: revisionOptions,
+        selectedRevisionId: "original",
+      },
+    });
+
+    for (const revision of sortedRevisions) {
+      const meta = getRevisionMeta(revision);
+      if (!meta.revisionSegment) continue;
+      paths.push({
+        params: { slug: revision.slug },
+        props: {
+          entry: revision,
+          revisions: revisionOptions,
+          selectedRevisionId: meta.revisionSegment,
+        },
+      });
+    }
+  }
+
+  return paths;
 }
 
-const { entry } = Astro.props;
+const { entry, revisions, selectedRevisionId } = Astro.props as Props;
 const { Content } = await entry.render();
+
+const selectedOption =
+  revisions.find((revision) => revision.id === selectedRevisionId) ?? revisions[0];
+
+const selectedRevisionLabel = selectedOption?.label ?? "Original";
+const selectedRevisionDate = selectedOption
+  ? formatDate(selectedOption.date)
+  : formatDate(entry.data.publicationDate);
 
 const navLinkClasses = [
   // Base
   "block py-3 text-lg font-medium uppercase",
   "underline underline-offset-4",
-  
+
   // Light mode
   "text-secondary-content/70 dark:text-primary-content/70",
-  
+
   // Hover
   "hover:text-secondary-content dark:hover:text-primary-content",
 ].join(" ");
@@ -39,7 +124,7 @@ const navLinkClasses = [
 const titleClasses = [
   // Base
   "mt-6 mb-2 flex flex-wrap justify-center text-balance text-4xl font-bold",
-  
+
   // Light mode
   "text-secondary-content dark:text-primary-content",
 ].join(" ");
@@ -47,10 +132,38 @@ const titleClasses = [
 const publishDateClasses = [
   // Base
   "text-center text-sm",
-  
+
   // Light mode
   "text-base-content/50"
 ].join(" ");
+
+const dropdownButtonClasses = [
+  "flex w-full items-center justify-between gap-3 rounded-full border",
+  "border-base-content/10 bg-base-100/90 px-4 py-2.5 text-sm",
+  "text-base-content/80 backdrop-blur transition-colors",
+  "hover:border-base-content/20 hover:text-base-content/90",
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-base-content/30",
+].join(" ");
+
+const dropdownMenuClasses = [
+  "absolute right-0 z-20 mt-2 w-72 overflow-hidden rounded-2xl border",
+  "border-base-content/10 bg-base-100/95 p-1.5 shadow-xl backdrop-blur",
+].join(" ");
+
+const dropdownItemClasses = [
+  "flex w-full items-center justify-between gap-2 rounded-xl px-3 py-2 text-left text-sm",
+  "text-base-content/80 transition-colors",
+  "hover:bg-base-content/5 hover:text-base-content",
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-base-content/40",
+].join(" ");
+
+const dropdownContainerClasses = [
+  "mx-auto mt-4 flex w-full max-w-md items-center justify-center gap-3 px-6",
+  "sm:px-0",
+].join(" ");
+
+const infoTooltipText =
+  "Revisions are made to improve clarity of writing, offer additional insight, or comment on events which have transpired since. For the sake of transparency, past revisions will continue to be made available.";
 ---
 
 <BaseLayout>
@@ -86,6 +199,61 @@ const publishDateClasses = [
         Dreamed on {formatDate(entry.data.dreamedDate)}
       </p>
     )}
+    {entry.data.revisionDate && (
+      <p class={publishDateClasses}>
+        Revised on {formatDate(entry.data.revisionDate)}
+      </p>
+    )}
+    <div class={dropdownContainerClasses} data-revision-dropdown>
+      <div class="relative w-full">
+        <button
+          type="button"
+          class={dropdownButtonClasses}
+          data-dropdown-trigger
+          aria-haspopup="listbox"
+          aria-expanded="false"
+        >
+          <span class="font-medium text-base-content/90">{selectedRevisionLabel}</span>
+          <span class="text-xs text-base-content/60">{selectedRevisionDate}</span>
+        </button>
+        <div
+          class={`${dropdownMenuClasses} hidden`}
+          data-dropdown-menu
+          role="listbox"
+        >
+          {revisions.map((revision) => (
+            <a
+              href={revision.href}
+              class={`${dropdownItemClasses} ${
+                revision.id === selectedRevisionId ? "bg-base-content/5" : ""
+              }`}
+              aria-selected={revision.id === selectedRevisionId}
+              aria-current={revision.id === selectedRevisionId ? "page" : undefined}
+              role="option"
+            >
+              <span class="font-medium text-base-content/90">{revision.label}</span>
+              <span class="text-xs text-base-content/60">{formatDate(revision.date)}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="relative group">
+        <button
+          type="button"
+          class="flex size-8 items-center justify-center rounded-full border border-base-content/15 text-sm font-semibold text-base-content/70 transition-colors hover:border-base-content/30 hover:text-base-content/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-base-content/30"
+          aria-describedby="revision-info-tooltip"
+        >
+          i
+        </button>
+        <div
+          id="revision-info-tooltip"
+          role="tooltip"
+          class="pointer-events-none absolute left-1/2 top-full z-10 mt-3 hidden w-72 -translate-x-1/2 rounded-2xl border border-base-content/10 bg-base-100/95 p-4 text-xs leading-relaxed text-base-content/70 shadow-xl backdrop-blur group-focus-within:block group-hover:block"
+        >
+          {infoTooltipText}
+        </div>
+      </div>
+    </div>
     <!-- <br class="my-6 opacity-50 border-base-content" /> -->
     <div class="prose mx-auto my-20 dark:prose-invert">
       <Content />
@@ -96,7 +264,7 @@ const publishDateClasses = [
       class={navLinkClasses}
       >{`← GO BACK`}</a
     >
-    
+
     <script is:inline>
       // Navigation via URL param: if ?ref=archive, GO BACK links point to /archive; else to /
       (function() {
@@ -106,6 +274,49 @@ const publishDateClasses = [
         const target = ref === 'archive' ? '/archive' : '/';
         backLinks.forEach(link => {
           link.href = target;
+        });
+      })();
+    </script>
+    <script is:inline>
+      (function () {
+        const dropdown = document.querySelector('[data-revision-dropdown]');
+        if (!dropdown) return;
+        const trigger = dropdown.querySelector('[data-dropdown-trigger]');
+        const menu = dropdown.querySelector('[data-dropdown-menu]');
+        if (!(trigger instanceof HTMLElement) || !(menu instanceof HTMLElement)) return;
+
+        function closeMenu() {
+          menu.classList.add('hidden');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+
+        function openMenu() {
+          menu.classList.remove('hidden');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+
+        trigger.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const isOpen = !menu.classList.contains('hidden');
+          if (isOpen) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        document.addEventListener('click', (event) => {
+          const target = event.target;
+          if (target instanceof Node && !dropdown.contains(target)) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            closeMenu();
+          }
         });
       })();
     </script>

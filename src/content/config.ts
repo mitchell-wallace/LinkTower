@@ -8,6 +8,7 @@ const blog = defineCollection({
       publicationDate: z.coerce.date(),
       dreamedDate: z.coerce.date().optional(),
       writtenDate: z.coerce.date().optional(),
+      revisionDate: z.coerce.date().optional(),
       image: image()
         .refine((img) => img.width >= 1200, {
           message: "Image should be 1200px × 630px.",

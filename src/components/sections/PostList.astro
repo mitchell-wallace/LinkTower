@@ -5,8 +5,9 @@ import { SITE } from "@/siteConfig";
 
 import Post from "@/components/sections/Post.astro";
 import CustomLink from "@/components/ui/CustomLink.astro";
+import { getBaseEntries } from "@/lib/blog";
 
-const posts = await getCollection("blog");
+const posts = getBaseEntries(await getCollection("blog"));
 
 const defaultSort = (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => {
   const aOrder = a.data.sortOrder;
