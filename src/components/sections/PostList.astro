@@ -31,7 +31,7 @@ const hasMore = sorted.length > limit;
 <h2 class="pt-8 sm:pt-12 pb-8 text-3xl font-semibold text-center text-base-content">Posts</h2>
 <ul class="flex flex-col gap-4 list-none px-0 pb-12">
   {limited.map((post: CollectionEntry<"blog">) => (
-    <Post post={post} />
+    <Post post={post} refFrom="home" />
   ))}
   {hasMore && (
     <CustomLink link={{
@@ -44,3 +44,4 @@ const hasMore = sorted.length > limit;
     }} />
   )}
 </ul>
+

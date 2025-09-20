@@ -132,6 +132,18 @@ const infoTooltipText =
     const { signal } = controller;
 
     if (dropdown instanceof HTMLElement) dropdown.dataset.initialized = 'true';
+    const currentSearch = window.location.search;
+    if (currentSearch) {
+      const links = menu.querySelectorAll('a[href]');
+      links.forEach((link) => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const url = new URL(href, window.location.origin);
+        if (url.search === currentSearch) return;
+        url.search = currentSearch;
+        link.setAttribute('href', `${url.pathname}${url.search}${url.hash}`);
+      });
+    }
 
     function closeMenu() {
       menu.classList.add('hidden');
@@ -177,3 +189,4 @@ const infoTooltipText =
   document.addEventListener('astro:page-load', initRevisionDropdown);
   document.addEventListener('astro:after-swap', initRevisionDropdown);
 </script>
+
