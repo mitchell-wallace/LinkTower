@@ -5,7 +5,7 @@ dreamedDate: 2019-08-04 # used
 writtenDate: 2019-08-04 # not used
 firstSharedDate: 2025-10-16 # not used
 publicationDate: 2025-10-16 # used
-# sortOrder:
+sortOrder: 1.0
 draft: false # set to false to publish post
 category: The Girl of my Dreams
 ---

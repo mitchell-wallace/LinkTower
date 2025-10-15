@@ -65,20 +65,6 @@
       "color": "neutral",
       "image": "quotd-example.png",
       "imageAlt": "An image of a tree in the deser with the words 'The Lord is good, a stronghold in the day of trouble'"
-    },
-    {
-      "id": "1728534585741",
-      "title": "My developer portfolio",
-      "description": "Check out my work",
-      "url": "https://mitchellwallace.dev",
-      "icon": "code"
-    },
-    {
-      "id": "1728534585742",
-      "title": "Ephod Studio",
-      "description": "Me and my fiancee's web design studio",
-      "url": "https://ephodstudio.com/",
-      "icon": "image"
     }
   ]
 }

@@ -1,11 +1,11 @@
 ---
 title: Go up the Mountain
-description: I was made to understand that all my problems would go away if I would only go up the mountain every day and labour for him as he called me to. Further, I was given an opportunity to return in time, and do things different with the knowledge of the experience I had. It sounded too good to be true, but it was given to me. The master forgave exactly as if I had never spurned his care.
+description: Armed with this knowledge, I came again to the mountain as at the first, but this time I lingered there. I laboured for the master, I did not wander down into the world below, and I worked to build up the mountain. Though I was in continual activity, it burdened me not. This yoke was indeed easy. Oh to dwell with our Lord and reach the summit of His presence each day!
 dreamedDate: 2024-11-29
 writtenDate: 2024-11-29
 firstSharedDate: 2025-08-28
 publicationDate: 2025-08-28
-sortOrder: 2.5
+sortOrder: 2.0
 category: Personal Devotion
 ---
 

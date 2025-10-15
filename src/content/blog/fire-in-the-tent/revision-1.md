@@ -6,7 +6,7 @@ writtenDate: 2022-05-29
 firstSharedDate: 2025-02-04
 publicationDate: 2025-04-27
 revisionDate: 2025-09-20
-sortOrder: 1.0
+sortOrder: 1.1
 draft: false
 category: The Church
 ---

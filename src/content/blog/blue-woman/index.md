@@ -5,7 +5,7 @@ dreamedDate: 2025-07-20
 writtenDate: 2025-07-20
 firstSharedDate: 2025-08-11
 publicationDate: 2025-08-11
-sortOrder: 2.0
+sortOrder: 3.0
 category: The Church
 ---
 
