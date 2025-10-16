@@ -8,6 +8,7 @@ export interface SiteConfiguration {
   blog: boolean;
   /** How many blog posts to show on the homepage */
   blogHomePostLimit?: number;
+  hideArchive?: boolean;
   contactFormEnabled: boolean;
   web3FormsAccessKey: string;
   /** Umami analytics website ID */
@@ -16,7 +17,7 @@ export interface SiteConfiguration {
   customLinks: CustomLink[];
 }
 
-type ColorVariant = 'base' | 'primary' | 'secondary' | 'accent' | 'neutral';
+type ColorVariant = "base" | "primary" | "secondary" | "accent" | "neutral";
 
 interface IconLink {
   id: string;
