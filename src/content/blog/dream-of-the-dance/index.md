@@ -3,8 +3,8 @@ title: The Dream of the Dance
 description: I began dancing with a girl; she was pretty, but otherwise unexceptional. I was enjoying myself, but there wasn’t anything serious between us. Then I noticed *the* girl, and something about her immediately captured my attention. She was by herself and seemed sad, and my heart was stirred with sympathy.
 dreamedDate: 2019-08-04 # used
 writtenDate: 2019-08-04 # not used
-firstSharedDate: 2025-10-16 # not used
-publicationDate: 2025-10-16 # used
+firstSharedDate: 2025-10-15 # not used
+publicationDate: 2025-10-15 # used
 sortOrder: 1.0
 draft: false # set to false to publish post
 category: The Girl of my Dreams
