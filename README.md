@@ -95,7 +95,7 @@ Custom links support several display modes:
 ```
 
 #### Link with Video
-Videos autoplay silently on loop (like animated GIFs). Supports MP4 and MOV formats:
+Videos autoplay silently on loop (like animated GIFs). **Only MP4 format is supported** for cross-browser compatibility.
 
 ```json
 {
