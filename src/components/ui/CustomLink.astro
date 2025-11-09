@@ -8,6 +8,10 @@ const formatTags = (tags: string[] | undefined) => {
   return tags.join(" • ");
 };
 
+// Determine if this is a gradient variant
+const isGradient = link.color?.endsWith('-gradient');
+const baseColor = isGradient ? link.color.replace('-gradient', '') : (link.color || 'base');
+
 // Explicit color mapping to ensure all classes are visible to Tailwind during build
 const COLOR_MAP = {
   base: {
@@ -37,6 +41,24 @@ const COLOR_MAP = {
     subtext: 'text-secondary-content',
     icon: 'text-secondary-content/70'
   },
+  tertiary: {
+    bg: 'bg-tertiary-100',
+    ring: 'ring-tertiary-200',
+    hoverBg: 'hover:bg-tertiary-200',
+    hoverRing: 'hover:ring-tertiary-300',
+    text: 'text-tertiary-content',
+    subtext: 'text-tertiary-content',
+    icon: 'text-tertiary-content/70'
+  },
+  accent: {
+    bg: 'bg-accent-100',
+    ring: 'ring-accent-200',
+    hoverBg: 'hover:bg-accent-200',
+    hoverRing: 'hover:ring-accent-300',
+    text: 'text-accent-content',
+    subtext: 'text-accent-content',
+    icon: 'text-accent-content/70'
+  },
   neutral: {
     bg: 'bg-neutral-100',
     ring: 'ring-neutral-200',
@@ -48,10 +70,73 @@ const COLOR_MAP = {
   }
 } as const;
 
-// Get color classes with fallback to base
-const colors = COLOR_MAP[link.color as keyof typeof COLOR_MAP] || COLOR_MAP.base;
+// Gradient color mapping
+const GRADIENT_MAP = {
+  base: {
+    bg: 'bg-gradient-to-br from-base-100-gradient-start to-base-100-gradient-end',
+    ring: 'ring-base-300/70',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-base-200-gradient-start hover:to-base-200-gradient-end',
+    hoverRing: 'hover:ring-base-300',
+    text: 'text-base-content',
+    subtext: 'text-base-content/70',
+    icon: 'text-base-content/70'
+  },
+  primary: {
+    bg: 'bg-gradient-to-br from-primary-100-gradient-start to-primary-100-gradient-end',
+    ring: 'ring-primary-200',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-primary-200-gradient-start hover:to-primary-200-gradient-end',
+    hoverRing: 'hover:ring-primary-300',
+    text: 'text-primary-content',
+    subtext: 'text-primary-content',
+    icon: 'text-primary-content/70'
+  },
+  secondary: {
+    bg: 'bg-gradient-to-br from-secondary-100-gradient-start to-secondary-100-gradient-end',
+    ring: 'ring-secondary-200',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-secondary-200-gradient-start hover:to-secondary-200-gradient-end',
+    hoverRing: 'hover:ring-secondary-300',
+    text: 'text-secondary-content',
+    subtext: 'text-secondary-content',
+    icon: 'text-secondary-content/70'
+  },
+  tertiary: {
+    bg: 'bg-gradient-to-br from-tertiary-100-gradient-start to-tertiary-100-gradient-end',
+    ring: 'ring-tertiary-200',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-tertiary-200-gradient-start hover:to-tertiary-200-gradient-end',
+    hoverRing: 'hover:ring-tertiary-300',
+    text: 'text-tertiary-content',
+    subtext: 'text-tertiary-content',
+    icon: 'text-tertiary-content/70'
+  },
+  accent: {
+    bg: 'bg-gradient-to-br from-accent-100-gradient-start to-accent-100-gradient-end',
+    ring: 'ring-accent-200',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-accent-200-gradient-start hover:to-accent-200-gradient-end',
+    hoverRing: 'hover:ring-accent-300',
+    text: 'text-accent-content',
+    subtext: 'text-accent-content',
+    icon: 'text-accent-content/70'
+  },
+  neutral: {
+    bg: 'bg-gradient-to-br from-neutral-100-gradient-start to-neutral-100-gradient-end',
+    ring: 'ring-neutral-200',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-neutral-200-gradient-start hover:to-neutral-200-gradient-end',
+    hoverRing: 'hover:ring-neutral-300',
+    text: 'text-neutral-content',
+    subtext: 'text-neutral-content/70',
+    icon: 'text-neutral-content/70'
+  }
+} as const;
 
-const linkClasses = link.image 
+// Get color classes with fallback to base
+const colors = isGradient
+  ? (GRADIENT_MAP[baseColor as keyof typeof GRADIENT_MAP] || GRADIENT_MAP.base)
+  : (COLOR_MAP[baseColor as keyof typeof COLOR_MAP] || COLOR_MAP.base);
+
+// Determine the arrow icon based on newTab
+const arrowIcon = link.newTab ? "external-link" : "lucide:chevron-right";
+
+const linkClasses = link.image || link.video
   ? `flex flex-col rounded-3xl px-6 py-3 text-lg transition-colors ring-2 ${colors.bg} ${colors.text} ${colors.ring} ${colors.hoverBg} ${colors.hoverRing} overflow-hidden`
   : `flex items-center gap-2 rounded-3xl px-6 py-3 text-lg transition-colors ring-2 ${colors.bg} ${colors.text} ${colors.ring} ${colors.hoverBg} ${colors.hoverRing}`;
 
@@ -61,6 +146,8 @@ const linkClasses = link.image
   <a
     href={link.url}
     class={linkClasses}
+    target={link.newTab ? "_blank" : undefined}
+    rel={link.newTab ? "noopener noreferrer" : undefined}
   >
     {link.image && (
       <div class="mb-3 -mx-6 -mt-3 max-w-[calc(100%+3rem)]"
@@ -77,6 +164,20 @@ const linkClasses = link.image
             }
           "
         />
+      </div>
+    )}
+    {link.video && (
+      <div class="mb-3 -mx-6 -mt-3 max-w-[calc(100%+3rem)]"
+      >
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          class="w-full object-cover object-center aspect-[3/2]"
+        >
+          <source src={link.video} type={`video/${link.video.split('.').pop()}`} />
+        </video>
       </div>
     )}
     <div class="flex items-center justify-between w-full">
@@ -109,7 +210,7 @@ const linkClasses = link.image
         )}
       </div>
       <Icon
-        name={"lucide:chevron-right"}
+        name={arrowIcon}
         class={`size-6 transition-colors ${colors.icon}`}
       />
     </div>

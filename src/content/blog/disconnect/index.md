@@ -10,6 +10,13 @@ draft: false # set to false to publish post
 category: Uncategorised
 # image: ./disconnect.jpg
 # imageAlt: The Human Right to Disconnect: Finding Rest in a Connected Age
+actionButtons:
+  - text: View on GitHub
+    url: https://github.com/mitchell-wallace
+    newTab: true
+  - text: Live Demo
+    url: https://mitchellwallace.dev
+    newTab: true
 ---
 
 # The Human Right to Disconnect: Finding Rest in a Connected Age
