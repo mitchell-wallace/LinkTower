@@ -19,13 +19,13 @@
       "id": "1728534577186",
       "icon": "linkedin",
       "url": "https://www.linkedin.com/in/mitchell-wallace-dev/",
-      "color": "primary"
+      "color": "neutral"
     },
     {
       "id": "1728534577188",
       "icon": "mail",
       "url": "mailto:mitchell.wallace@outlook.com.au",
-      "color": "secondary"
+      "color": "neutral"
     }
   ],
   "customLinks": [
@@ -37,7 +37,7 @@
       "icon": "share",
       "color": "neutral",
       "image": "quotd-example.png",
-      "imageAlt": "An image of a tree in the deser with the words 'The Lord is good, a stronghold in the day of trouble'"
+      "imageAlt": "An image of a tree in the desert with the words 'The Lord is good, a stronghold in the day of trouble'"
     },
     {
       "id": "1728534585740",
@@ -56,47 +56,12 @@
       "color": "secondary"
     },
     {
-      "id": "1728534585742",
-      "title": "GitHub Profile",
-      "description": "View my open source projects",
-      "url": "https://github.com/mitchell-wallace",
-      "icon": "github",
-      "color": "neutral",
-      "newTab": true
-    },
-    {
-      "id": "1728534585743",
-      "title": "LinkedIn Profile",
-      "description": "Connect with me professionally",
-      "url": "https://www.linkedin.com/in/mitchell-wallace-dev/",
-      "icon": "linkedin",
-      "color": "primary",
-      "newTab": true
-    },
-    {
-      "id": "1728534585744",
-      "title": "Contact Me",
-      "description": "Get in touch via email",
-      "url": "mailto:mitchell.wallace@outlook.com.au",
-      "icon": "mail",
-      "color": "secondary"
-    },
-    {
-      "id": "1728534585746",
-      "title": "Hashi Animation",
-      "description": "Demo of an API I built",
-      "url": "https://mitchellwallace.dev",
-      "icon": "play",
-      "color": "base",
-      "video": "/hashi.mp4"
-    },
-    {
       "id": "1728534585747",
       "title": "Download LinkTower Logo",
       "description": "Get the official LinkTower logo",
       "url": "/profile-picture.png",
       "icon": "image",
-      "color": "primary",
+      "color": "base",
       "download": true,
       "newTab": true
     }

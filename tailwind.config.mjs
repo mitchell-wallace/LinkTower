@@ -35,9 +35,18 @@ export default {
             },
             p: {
               fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
-              fontSize: '1.35em',
-              lineHeight: 1.5,
-              paddingBottom: '1em',
+              fontSize: '1.2em',
+              lineHeight: 1.6
+            },
+            ul: {
+              fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+              fontSize: '1.2em',
+              lineHeight: 1.6
+            },
+            ol: {
+              fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+              fontSize: '1.2em',
+              lineHeight: 1.6
             },
             figcaption: {
               fontSize: '1.1em',

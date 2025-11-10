@@ -117,7 +117,7 @@ const navLinkClasses = [
 
 const titleClasses = [
   // Base
-  "mt-6 mb-2 flex flex-wrap justify-center text-balance text-4xl font-bold",
+  "mt-1 md:mt-6 mb-2 flex flex-wrap justify-center text-center text-balance text-4xl font-bold",
 
   // Light mode
   "text-secondary-content dark:text-primary-content",
@@ -143,15 +143,6 @@ const publishDateClasses = [
       class={navLinkClasses}
       >{`← GO BACK`}</a
     >
-    {
-      entry.data.image && (
-        <Image
-          src={entry.data.image}
-          alt={entry.data.imageAlt || ""}
-          class="mt-10 h-auto w-full"
-        />
-      )
-    }
     <h1
       class={titleClasses}
     >
@@ -176,7 +167,7 @@ const publishDateClasses = [
       <RevisionSelector revisions={revisions} selectedRevisionId={selectedRevisionId} />
     )}
     {entry.data.actionButtons && entry.data.actionButtons.length > 0 && (
-      <div class="mt-8 mb-4 flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
+      <div class="mt-4 md:mt-8 mb-4 flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
         {entry.data.actionButtons.map((button) => {
           const Icon = button.newTab ? "external-link" : "lucide:chevron-right";
           return (
@@ -184,7 +175,7 @@ const publishDateClasses = [
               href={button.url}
               target={button.newTab ? "_blank" : undefined}
               rel={button.newTab ? "noopener noreferrer" : undefined}
-              class="flex items-center justify-center gap-2 flex-1 min-w-[180px] lg:min-w-0 lg:flex-[0_1_calc(50%-0.375rem)] px-6 py-3 rounded-2xl bg-secondary-100 text-secondary-content ring-2 ring-secondary-200 hover:bg-secondary-200 hover:ring-secondary-300 transition-colors font-medium"
+              class="flex items-center justify-center gap-2 flex-1 min-w-[180px] lg:min-w-0 lg:flex-[0_1_calc(50%-0.375rem)] px-6 py-3 rounded-2xl ring-2 transition-colors font-medium bg-secondary-100 text-secondary-content ring-secondary-200 hover:bg-secondary-200 hover:ring-secondary-300 dark:bg-primary-100 dark:text-primary-content dark:ring-primary-200 dark:hover:bg-primary-200 dark:hover:ring-primary-300"
             >
               <span>{button.text}</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-colors">
@@ -203,8 +194,17 @@ const publishDateClasses = [
         })}
       </div>
     )}
+    {entry.data.image && (
+      <div class="my-6 md:my-12 max-w-2xl mx-auto">
+        <Image
+          src={entry.data.image}
+          alt={entry.data.imageAlt || ""}
+          class="w-full rounded-2xl ring-2 ring-base-200 dark:ring-base-800"
+        />
+      </div>
+    )}
     <!-- <br class="my-6 opacity-50 border-base-content" /> -->
-    <div class="prose mx-auto my-20 dark:prose-invert">
+    <div class="prose mx-auto my-4 lg:my-12 dark:prose-invert">
       <Content />
     </div>
     <a
