@@ -13,29 +13,29 @@
       "id": "1728534577184",
       "icon": "github",
       "url": "https://github.com/mitchell-wallace",
-      "color": "neutral"
+      "color": "base"
     },
     {
       "id": "1728534577186",
       "icon": "linkedin",
       "url": "https://www.linkedin.com/in/mitchell-wallace-dev/",
-      "color": "neutral"
+      "color": "base"
     },
     {
       "id": "1728534577188",
       "icon": "mail",
       "url": "mailto:mitchell.wallace@outlook.com.au",
-      "color": "neutral"
+      "color": "base"
     }
   ],
   "customLinks": [
     {
       "id": "1728534585739",
       "title": "Quotd: Share the word",
-      "description": "Web app for sharing Bible verses",
+      "description": "App for sharing Bible verses",
       "url": "/blog/quotd?ref=home",
       "icon": "share",
-      "color": "neutral",
+      "color": "base",
       "image": "quotd-example.png",
       "imageAlt": "An image of a tree in the desert with the words 'The Lord is good, a stronghold in the day of trouble'"
     },
@@ -44,6 +44,7 @@
       "title": "My Personal Website",
       "description": "Find my socials and posts",
       "url": "https://mitchellwallace.net",
+      "newTab": true,
       "icon": "megaphone",
       "color": "primary"
     },
@@ -52,6 +53,7 @@
       "title": "My Dev Portfolio",
       "description": "Check out my work",
       "url": "https://mitchellwallace.dev",
+      "newTab": true,
       "icon": "id-card",
       "color": "secondary"
     },
@@ -61,7 +63,7 @@
       "description": "Get the official LinkTower logo",
       "url": "/profile-picture.png",
       "icon": "image",
-      "color": "base",
+      "color": "neutral",
       "download": true,
       "newTab": true
     }

@@ -5,6 +5,7 @@ publicationDate: 2024-09-05
 draft: false
 hidden: false
 category: "Digital Wellness"
+sortOrder: 1
 tags: ["culture", "society", "relationships", "connectivity", "isolation"]
 ---
 
