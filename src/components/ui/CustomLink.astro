@@ -235,28 +235,16 @@ const carouselId = `carousel-${link.id}`;
     data-testid="custom-link"
   >
     {link.carouselImages && link.carouselImages.length > 0 ? (
-      <div class="mb-3 -mx-6 -mt-3 max-w-[calc(100%+3rem)] carousel-container" data-testid="carousel-container">
+      <div class="mb-3 -mx-6 -mt-3 max-w-[calc(100%+3rem)] carousel-container" data-carousel-id={carouselId} data-testid="carousel-container">
         <div class="overflow-hidden">
-          <div class="carousel-track" id={`${carouselId}-track`} data-testid="carousel-track">
+          <div class="carousel-track" id={carouselId} data-testid="carousel-track">
             {link.carouselImages.map((img, index) => (
               <div class="carousel-slide" data-testid="carousel-slide">
                 <img
                   src={img}
                   alt={link.carouselImageAlts?.[index] || link.title}
                   class="w-full object-cover object-center aspect-[3/2]"
-                  data-carousel-image={index === 0 ? "first" : undefined}
-                  onload={index === 0 ? `
-                    const ratio = this.naturalWidth / this.naturalHeight;
-                    const track = document.getElementById('${carouselId}-track');
-                    if (track && ratio > 0) {
-                      track.style.aspectRatio = ratio.toString();
-                      const images = track.querySelectorAll('img');
-                      images.forEach(img => {
-                        img.classList.remove('aspect-[3/2]');
-                        img.style.aspectRatio = ratio.toString();
-                      });
-                    }
-                  ` : undefined}
+                  data-carousel-first={index === 0 ? "true" : undefined}
                 />
               </div>
             ))}
@@ -286,89 +274,6 @@ const carouselId = `carousel-${link.id}`;
             />
           ))}
         </div>
-        <script define:vars={{ carouselId }}>
-          (function() {
-            const track = document.getElementById(`${carouselId}-track`);
-            const dots = track?.closest('.carousel-container')?.querySelectorAll('.carousel-dot');
-            const prevBtn = track?.closest('.carousel-container')?.querySelector('.carousel-nav-btn.prev');
-            const nextBtn = track?.closest('.carousel-container')?.querySelector('.carousel-nav-btn.next');
-            const link = track?.closest('a');
-
-            if (!track || !dots || !prevBtn || !nextBtn) return;
-
-            let currentIndex = 0;
-            const totalSlides = dots.length;
-            let autoPlayInterval;
-
-            function goToSlide(index) {
-              currentIndex = (index + totalSlides) % totalSlides;
-              track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-              dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentIndex);
-              });
-            }
-
-            function nextSlide() {
-              goToSlide(currentIndex + 1);
-            }
-
-            function prevSlide() {
-              goToSlide(currentIndex - 1);
-            }
-
-            function startAutoPlay() {
-              stopAutoPlay();
-              autoPlayInterval = setInterval(nextSlide, 4000);
-            }
-
-            function stopAutoPlay() {
-              if (autoPlayInterval) {
-                clearInterval(autoPlayInterval);
-                autoPlayInterval = null;
-              }
-            }
-
-            // Event listeners for buttons
-            prevBtn.addEventListener('click', (e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              prevSlide();
-              stopAutoPlay();
-              setTimeout(startAutoPlay, 8000);
-            });
-
-            nextBtn.addEventListener('click', (e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              nextSlide();
-              stopAutoPlay();
-              setTimeout(startAutoPlay, 8000);
-            });
-
-            // Event listeners for dots
-            dots.forEach((dot, index) => {
-              dot.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                goToSlide(index);
-                stopAutoPlay();
-                setTimeout(startAutoPlay, 8000);
-              });
-            });
-
-            // Pause on hover
-            const container = track.closest('.carousel-container');
-            container?.addEventListener('mouseenter', stopAutoPlay);
-            container?.addEventListener('mouseleave', startAutoPlay);
-
-            // Start autoplay
-            startAutoPlay();
-
-            // Cleanup on page unload
-            window.addEventListener('beforeunload', stopAutoPlay);
-          })();
-        </script>
       </div>
     ) : link.image && (
       <div class="mb-3 -mx-6 -mt-3 max-w-[calc(100%+3rem)]"
@@ -437,3 +342,127 @@ const carouselId = `carousel-${link.id}`;
     </div>
   </a>
 </li>
+
+<script>
+  // Initialize carousels after DOM is ready
+  function initCarousel(container) {
+    const carouselId = container.getAttribute('data-carousel-id');
+    if (!carouselId) return;
+
+    const track = document.getElementById(carouselId);
+    const dots = container.querySelectorAll('.carousel-dot');
+    const prevBtn = container.querySelector('.carousel-nav-btn.prev');
+    const nextBtn = container.querySelector('.carousel-nav-btn.next');
+
+    if (!track || !dots.length || !prevBtn || !nextBtn) return;
+
+    let currentIndex = 0;
+    const totalSlides = dots.length;
+    let autoPlayInterval = null;
+
+    function goToSlide(index) {
+      currentIndex = (index + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayInterval = setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+      }
+    }
+
+    // Event listeners for buttons
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      prevSlide();
+      stopAutoPlay();
+      setTimeout(startAutoPlay, 8000);
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      nextSlide();
+      stopAutoPlay();
+      setTimeout(startAutoPlay, 8000);
+    });
+
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(index);
+        stopAutoPlay();
+        setTimeout(startAutoPlay, 8000);
+      });
+    });
+
+    // Pause on hover
+    container.addEventListener('mouseenter', stopAutoPlay);
+    container.addEventListener('mouseleave', startAutoPlay);
+
+    // Handle first image load for aspect ratio
+    const firstImg = track.querySelector('img[data-carousel-first="true"]');
+    if (firstImg) {
+      const handleImageLoad = () => {
+        const ratio = firstImg.naturalWidth / firstImg.naturalHeight;
+        if (ratio > 0) {
+          track.style.aspectRatio = ratio.toString();
+          const images = track.querySelectorAll('img');
+          images.forEach(img => {
+            img.classList.remove('aspect-[3/2]');
+            img.style.aspectRatio = ratio.toString();
+          });
+        }
+      };
+
+      if (firstImg.complete) {
+        handleImageLoad();
+      } else {
+        firstImg.addEventListener('load', handleImageLoad);
+      }
+    }
+
+    // Start autoplay
+    startAutoPlay();
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', stopAutoPlay);
+  }
+
+  // Initialize all carousels on the page
+  function initAllCarousels() {
+    const carousels = document.querySelectorAll('.carousel-container');
+    carousels.forEach(initCarousel);
+  }
+
+  // Run initialization when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAllCarousels);
+  } else {
+    initAllCarousels();
+  }
+
+  // Also re-initialize for view transitions
+  document.addEventListener('astro:page-load', initAllCarousels);
+</script>
