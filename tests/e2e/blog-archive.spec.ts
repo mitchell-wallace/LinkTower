@@ -1,32 +1,6 @@
 import { test, expect } from '@playwright/test';
-import fs from 'fs';
-import path from 'path';
 
 test.describe('Blog Archive Tests', () => {
-  const originalContentPath = path.join(process.cwd(), 'src/content/blog');
-  const testContentPath = path.join(process.cwd(), 'tests/fixtures/content/blog');
-  const backupPath = path.join(process.cwd(), 'src/content/blog-backup');
-
-  test.beforeAll(() => {
-    // Backup original blog content and use test fixtures
-    if (fs.existsSync(originalContentPath)) {
-      fs.renameSync(originalContentPath, backupPath);
-    }
-
-    // Copy test fixtures to content directory
-    fs.cpSync(testContentPath, originalContentPath, { recursive: true });
-  });
-
-  test.afterAll(() => {
-    // Restore original blog content
-    if (fs.existsSync(originalContentPath)) {
-      fs.rmSync(originalContentPath, { recursive: true, force: true });
-    }
-    if (fs.existsSync(backupPath)) {
-      fs.renameSync(backupPath, originalContentPath);
-    }
-  });
-
   test('displays all test posts on archive page', async ({ page }) => {
     await page.goto('/archive');
 

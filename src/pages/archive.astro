@@ -7,7 +7,11 @@ import SeoPage from "@/components/head/SeoPage.astro";
 import Post from "@/components/sections/Post.astro";
 import { getBaseEntries } from "@/lib/postsService";
 
-const posts = getBaseEntries(await getCollection("blog"));
+// Use test blog content when building the Playwright test site, otherwise
+// use the real blog collection.
+const useTestBlog = typeof process !== 'undefined' && process.env.PUBLIC_USE_TEST_BLOG === 'true';
+const blogCollectionName = useTestBlog ? 'blog-test' : 'blog';
+const posts = getBaseEntries(await getCollection(blogCollectionName as any));
 
 // Render all posts unsorted - client-side JS will handle sorting/filtering
 const allPosts = posts;

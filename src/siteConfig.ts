@@ -1,4 +1,5 @@
 import siteConfigJson from "./siteConfig.json";
+import siteConfigTestJson from "./siteConfig-test.json";
 
 export interface SiteConfiguration {
   name: string;
@@ -40,6 +41,16 @@ interface CustomLink {
   download?: boolean;
 }
 
+// In normal builds the site uses siteConfig.json.
+// For Playwright/end-to-end tests we build a test variant of the site
+// with PUBLIC_USE_TEST_SITE_CONFIG=true so that we can safely use
+// alternate configuration without affecting production behavior.
+const rawConfig = (typeof process !== 'undefined' && process.env.PUBLIC_USE_TEST_SITE_CONFIG === 'true')
+  ? siteConfigTestJson
+  : siteConfigJson;
+
 export const SITE: SiteConfiguration = {
-  ...siteConfigJson,
+  ...rawConfig,
 };
+
+export default SITE;

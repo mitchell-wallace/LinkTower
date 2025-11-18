@@ -1,5 +1,5 @@
 ---
-import siteConfig from "@/siteConfig.json";
+import { SITE } from "@/siteConfig";
 
 // Button styles - matching CustomLink component
 const buttonClasses = [
@@ -36,8 +36,8 @@ const errorClasses = "text-error text-sm mt-1";
   data-astro-reload
   novalidate>
   
-  <!-- Web3Forms Access Key from siteConfig.json -->
-  <input type="hidden" name="access_key" value={siteConfig.web3FormsAccessKey} />
+  <!-- Web3Forms Access Key from site configuration (test/prod aware) -->
+  <input type="hidden" name="access_key" value={SITE.web3FormsAccessKey} />
   
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="mb-5">

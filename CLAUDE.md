@@ -8,13 +8,16 @@ Treelink++ is a fork of [Treelink](https://github.com/trevortylerlee/treelink) b
 
 ## Essential Commands
 
-| Command | Purpose |
-|---------|---------|
-| `pnpm install` | Install dependencies |
-| `pnpm run dev` | Start development server at localhost:3030 |
-| `pnpm run build` | Build production site to ./dist/ |
-| `pnpm run preview` | Preview build locally |
-| `pnpm run astro` | Run Astro CLI commands |
+|| Command | Purpose |
+||---------|---------|
+|| `pnpm install` | Install dependencies |
+|| `pnpm run dev` | Start development server at localhost:3030 |
+|| `pnpm run build` | Build production site to ./dist/ |
+|| `pnpm run preview` | Preview build locally |
+|| `pnpm run astro` | Run Astro CLI commands |
+|| `pnpm test` | Run Vitest unit tests (watch mode by default) |
+|| `pnpm test:run` | Run Vitest unit tests once (CI-friendly) |
+|| `pnpm exec playwright test --reporter=list` | Run Playwright e2e suite against the test build |
 
 ## Core Architecture
 
@@ -71,6 +74,20 @@ Treelink++ is a fork of [Treelink](https://github.com/trevortylerlee/treelink) b
 - Requires Web3Forms access key in `siteConfig.json`
 - Form component at `src/components/Contact.astro`
 - Enable/disable with `contactFormEnabled` flag in config
+
+### Testing
+
+- **Unit tests (Vitest)**
+  - Run `pnpm test` during development
+  - Run `pnpm test:run` for a single headless pass (e.g. in CI)
+- **End-to-end tests (Playwright)**
+  - Run `pnpm exec playwright test --reporter=list`
+  - Playwright's `webServer` config automatically:
+    - Builds a **test variant** of the site via `pnpm run build:test`
+    - Switches to `src/siteConfig-test.json` instead of the main `src/siteConfig.json`
+    - Uses the `blog-test` collection defined in `src/content/config.ts` and markdown files in `src/content/blog-test/`
+    - Serves the test build via `astro preview` on a dedicated port for the tests
+  - The main `src/content/blog/` and `src/siteConfig.json` used for the real site are never modified by the tests
 
 ## Key Files to Modify
 

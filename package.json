@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:test": "cross-env PUBLIC_USE_TEST_SITE_CONFIG=true PUBLIC_USE_TEST_BLOG=true astro build",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest",
@@ -42,6 +43,7 @@
     "jsdom": "^27.2.0",
     "playwright": "^1.56.1",
     "prettier": "^3.3.3",
+    "cross-env": "^7.0.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "vitest": "^4.0.10"

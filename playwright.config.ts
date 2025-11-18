@@ -6,9 +6,12 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  // Use a non-interactive reporter so `playwright test` exits cleanly in all environments
+  reporter: 'list',
   use: {
-    baseURL: 'http://localhost:4321',
+    // Use a dedicated port for Playwright's preview server to avoid clashing
+    // with any dev/preview servers you may already be running.
+    baseURL: 'http://localhost:4322',
     trace: 'on-first-retry',
   },
   projects: [
@@ -18,9 +21,14 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'pnpm run build && pnpm run preview',
-    url: 'http://localhost:4321',
-    reuseExistingServer: true,
+    // Build a dedicated test variant of the site that uses test config/content,
+    // then serve it via preview for a stable, production-like environment.
+    // We bind preview to port 4322 to avoid conflicts with any existing servers.
+    command: 'pnpm run build:test && pnpm run preview -- --port=4322',
+    url: 'http://localhost:4322',
+    // Always start a fresh preview server for tests so we don't accidentally
+    // reuse a previous build that was created with different env/config.
+    reuseExistingServer: false,
     timeout: 120000,
   },
 });

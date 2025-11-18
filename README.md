@@ -30,12 +30,53 @@ To use the contact form, you will need to get an access key from [Web3Forms](htt
 
 All commands are run from the root of the project, from a terminal:
 
-| Command           | Action                                       |
-| :---------------- | :------------------------------------------- |
-| `pnpm install`     | Installs dependencies                        |
-| `pnpm run dev`     | Starts local dev server at `localhost:3030`  |
-| `pnpm run build`   | Build your production site to `./dist/`      |
-| `pnpm run preview` | Preview your build locally, before deploying |
+|| Command           | Action                                       |
+|| :---------------- | :------------------------------------------- |
+|| `pnpm install`     | Installs dependencies                        |
+|| `pnpm run dev`     | Starts local dev server at `localhost:3030`  |
+|| `pnpm run build`   | Build your production site to `./dist/`      |
+|| `pnpm run preview` | Preview your build locally, before deploying |
+
+## 🧪 Testing
+
+### Unit tests (Vitest)
+
+Run the unit test suite using Vitest:
+
+```bash
+pnpm test
+```
+
+To run tests once in headless mode (useful for CI):
+
+```bash
+pnpm test:run
+```
+
+### End-to-end tests (Playwright)
+
+The Playwright suite exercises the homepage, contact form, and blog archive using a dedicated test build of the site.
+
+Run all e2e tests:
+
+```bash
+pnpm exec playwright test --reporter=list
+```
+
+This will:
+
+- Build a test variant of the site via `pnpm run build:test` (wired through Playwright's `webServer` config)
+- Use `src/siteConfig-test.json` instead of `src/siteConfig.json`
+- Use the `blog-test` collection in `src/content/blog-test/` (with Alpha/Beta/Gamma/Delta/Epsilon posts) instead of your real `src/content/blog/`
+- Start `astro preview` for the test build on `http://localhost:4322` and run the browser tests against it
+
+Your real content and configuration are never modified as part of the e2e test run.
+
+If you have not installed Playwright browsers yet, run:
+
+```bash
+pnpm exec playwright install
+```
 
 ## 🎨 Customization
 

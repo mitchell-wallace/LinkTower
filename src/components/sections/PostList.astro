@@ -7,7 +7,12 @@ import Post from "@/components/sections/Post.astro";
 import CustomLink from "@/components/ui/CustomLink.astro";
 import { getBaseEntries, sortEntriesDefault } from "@/lib/postsService";
 
-const posts = getBaseEntries(await getCollection("blog"));
+// Use the real blog collection by default, but allow a test-only collection
+// to be swapped in when building the Playwright test site.
+const useTestBlog = typeof process !== 'undefined' && process.env.PUBLIC_USE_TEST_BLOG === 'true';
+const blogCollectionName = useTestBlog ? 'blog-test' : 'blog';
+
+const posts = getBaseEntries(await getCollection(blogCollectionName as any));
 const sorted = sortEntriesDefault(posts);
 
 const limit = SITE.blogHomePostLimit ?? 5;
@@ -17,7 +22,7 @@ const hasMore = sorted.length > limit;
 
 <h2 class="pt-8 sm:pt-12 pb-8 text-3xl font-semibold text-center text-base-content" data-testid="posts-section">Posts</h2>
 <ul class="flex flex-col gap-4 list-none px-0 pb-12" data-testid="posts-list">
-  {limited.map((post: CollectionEntry<"blog">) => (
+  {limited.map((post: CollectionEntry<"blog"> | CollectionEntry<"blog-test">) => (
     <Post post={post} refFrom="home" />
   ))}
   {hasMore && (

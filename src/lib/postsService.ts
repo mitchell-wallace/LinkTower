@@ -1,6 +1,8 @@
 import type { CollectionEntry } from "astro:content";
 
-export type BlogEntry = CollectionEntry<"blog">;
+// Support both the real "blog" collection and the test-only "blog-test" collection,
+// which share an identical schema.
+export type BlogEntry = CollectionEntry<"blog"> | CollectionEntry<"blog-test">;
 
 const REVISION_PATTERN = /^revision-(\d+)$/;
 
