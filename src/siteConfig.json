@@ -1,7 +1,8 @@
 {
   "name": "LinkTower",
-  "bio": "Links • Blog • Contact",
+  "bio": "Links, blog, and contact form.\nAll on your own domain.",
   "profilePicture": "/profile-picture.png",
+  "roundProfilePicture": false,
   "url": "https://linktower.mitchellwallace.net",
   "isBlogDisplayed": true,
   "blogHomePostLimit": 3,

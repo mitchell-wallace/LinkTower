@@ -5,6 +5,8 @@ export interface SiteConfiguration {
   name: string;
   bio: string;
   profilePicture: string;
+  /** Whether to show the profile picture as rounded. Defaults to true if not specified. */
+  roundProfilePicture?: boolean;
   url: string;
   isBlogDisplayed: boolean;
   /** How many blog posts to show on the homepage */
